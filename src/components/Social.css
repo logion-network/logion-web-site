@@ -1,0 +1,12 @@
+.Social {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.Social > * {
+    padding-left: 30px;
+}
+
+.Social > *:first-child {
+    padding-left: 0;
+}

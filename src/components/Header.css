@@ -1,0 +1,4 @@
+.Header .logo-menu-container {
+    display: flex;
+    justify-content: space-between;
+}
