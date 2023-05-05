@@ -1,6 +1,20 @@
 .Social {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    --normal-top: 40px;
+    --smaller-top: 14px;
+    --normal-bottom: 20px;
+    --smaller-bottom: 14px;
+
+    padding-top: var(--normal-top);
+    padding-bottom: var(--normal-bottom);
+    animation-name: social-small-to-normal;
+    animation-duration: var(--default-animation-duration);
+}
+
+.Social.smaller {
+    padding-top: var(--smaller-top);
+    padding-bottom: var(--smaller-bottom);
+    animation-name: social-normal-to-small;
+    animation-duration: var(--default-animation-duration);
 }
 
 .Social > * {
@@ -9,4 +23,27 @@
 
 .Social > *:first-child {
     padding-left: 0;
+}
+
+
+@keyframes social-normal-to-small {
+    from {
+        padding-top: var(--normal-top);
+        padding-bottom: var(--normal-bottom);
+    }
+    to {
+        padding-top: var(--smaller-top);
+        padding-bottom: var(--smaller-bottom);
+    }
+}
+
+@keyframes social-small-to-normal {
+    from {
+        padding-top: var(--smaller-top);
+        padding-bottom: var(--smaller-bottom);
+    }
+    to {
+        padding-top: var(--normal-top);
+        padding-bottom: var(--normal-bottom);
+    }
 }

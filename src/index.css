@@ -1,5 +1,10 @@
 @import url("vars.css");
 
+/* Private global variables */
+:root {
+    --default-animation-duration: 0.3s;
+}
+
 body {
     margin: 0;
     font-family: var(--main-font);

@@ -6,10 +6,14 @@ import "./Social.css";
 const ICONS_COLOR = "var(--color1-color)";
 const ICONS_SIZE = 20;
 
-export default function Social() {
+export interface Props {
+    smaller: boolean;
+}
+
+export default function Social(props: Props) {
 
     return (
-        <div className="Social">
+        <div className={`Social${ props.smaller ? " smaller" : "" }`}>
             {
                 LINKEDIN_URL !== undefined &&
                 <ExternalLink

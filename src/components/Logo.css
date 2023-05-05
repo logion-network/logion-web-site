@@ -1,7 +1,60 @@
 .Logo {
-    padding-top: 20px;
+    --normal-top: 20px;
+    --smaller-top: 10px;
+    --normal-height: 64px;
+    --smaller-height: 32px;
+
+    padding-top: var(--normal-top);
+}
+
+.Logo.smaller {
+    padding-top: var(--smaller-top);
+}
+
+@keyframes logo-normal-to-small {
+    from {
+        padding-top: var(--normal-top);
+    }
+    to {
+        padding-top: var(--smaller-top);
+    }
+}
+
+@keyframes logo-small-to-normal {
+    from {
+        padding-top: var(--smaller-top);
+    }
+    to {
+        padding-top: var(--normal-top);
+    }
 }
 
 .Logo img {
-    height: 64px;
+    height: var(--normal-height);
+    animation-name: logo-img-small-to-normal;
+    animation-duration: var(--default-animation-duration);
+}
+
+.Logo.smaller img {
+    height: var(--smaller-height);
+    animation-name: logo-img-normal-to-small;
+    animation-duration: var(--default-animation-duration);
+}
+
+@keyframes logo-img-normal-to-small {
+    from {
+        height: var(--normal-height);
+    }
+    to {
+        height: var(--smaller-height);
+    }
+}
+
+@keyframes logo-img-small-to-normal {
+    from {
+        height: var(--smaller-height);
+    }
+    to {
+        height: var(--normal-height);
+    }
 }

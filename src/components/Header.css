@@ -1,3 +1,13 @@
+.Header {
+    position: fixed;
+    width: 100%;
+}
+
+.Header.scroll {
+    background-color: white;
+    box-shadow: 0 10px 10px rgb(225, 225, 225);
+}
+
 .Header .logo-menu-container {
     display: flex;
     justify-content: space-between;
