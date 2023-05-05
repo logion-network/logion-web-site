@@ -1,0 +1,14 @@
+/* Used as main font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+/* Used as alternative font */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+:root {
+    --default-color: black;
+    --background: white;
+    --base-font-size: 16px;
+    --color1-color: #312a91;
+    --color2-color: #e6007a;
+    --main-font: "Montserrat", sans-serif;
+    --alternative-font: "Lexend Deca", sans-serif;
+}
