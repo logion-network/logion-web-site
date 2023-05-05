@@ -1,8 +1,12 @@
 import "./Logo.css";
 
-export default function Logo() {
+export interface Props {
+    smaller: boolean;
+}
+
+export default function Logo(props: Props) {
     return (
-        <div className="Logo">
+        <div className={`Logo${ props.smaller ? " smaller" : "" }`}>
             <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logion logo" />
         </div>
     );
