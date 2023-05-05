@@ -47,5 +47,5 @@ Also, make sure to removed unused imports, they slow down page loading.
 
 Edit this file with caution as it may be hard to maintain the overall design coherence while just changing a couple of values.
 
-## Deployment
-Build with `yarn build` then upload content of `build` directory via FTP onto Logion's Infomaniak web hosting.
+## Testing
+New commits pushed to the `main` branch trigger a GitHub action wish builds and deploys the web site to [https://logion-network.github.io/logion-web-site/](https://logion-network.github.io/logion-web-site/).
