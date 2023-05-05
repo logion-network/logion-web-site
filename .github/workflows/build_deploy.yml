@@ -17,6 +17,8 @@ jobs:
           run: |
             yarn install --immutable
             yarn build
+          env:
+            PUBLIC_URL: https://logion-network.github.io/logion-web-site/
 
         - name: Deploy 🚀
           uses: JamesIves/github-pages-deploy-action@v4
