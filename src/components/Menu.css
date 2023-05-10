@@ -1,0 +1,59 @@
+.Menu {
+    --normal-top: 40px;
+    --smaller-top: 14px;
+    --normal-bottom: 20px;
+    --smaller-bottom: 14px;
+
+    padding-top: var(--normal-top);
+    padding-bottom: var(--normal-bottom);
+    animation-name: menu-small-to-normal;
+    animation-duration: var(--default-animation-duration);
+    font-family: var(--alternative-font);
+}
+
+.Menu.smaller {
+    padding-top: var(--smaller-top);
+    padding-bottom: var(--smaller-bottom);
+    animation-name: menu-normal-to-small;
+    animation-duration: var(--default-animation-duration);
+}
+
+.Menu a,
+.Menu a:hover {
+    color: var(--color1-color);
+}
+
+.Menu a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.Menu a:hover {
+    text-decoration: underline;
+}
+
+.Menu a:not(:first-child) {
+    margin-left: 32px;
+}
+
+@keyframes menu-normal-to-small {
+    from {
+        padding-top: var(--normal-top);
+        padding-bottom: var(--normal-bottom);
+    }
+    to {
+        padding-top: var(--smaller-top);
+        padding-bottom: var(--smaller-bottom);
+    }
+}
+
+@keyframes menu-small-to-normal {
+    from {
+        padding-top: var(--smaller-top);
+        padding-bottom: var(--smaller-bottom);
+    }
+    to {
+        padding-top: var(--normal-top);
+        padding-bottom: var(--normal-bottom);
+    }
+}

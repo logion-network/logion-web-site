@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
 :root {
-    --default-color: black;
+    --default-color: #141b2d;
     --background: repeat-y center/100% url("./components/background.png");
     --base-font-size: 16px;
-    --color1-color: #312a91;
+    --color1-color: #1b307a;
     --color2-color: #e6007a;
     --main-font: "Montserrat", sans-serif;
     --alternative-font: "Lexend Deca", sans-serif;

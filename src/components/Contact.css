@@ -1,0 +1,14 @@
+.Contact {
+    color: white;
+    background-color: var(--color1-color);
+}
+
+.Contact h2 em {
+    font-style: normal;
+    color: var(--color2-color);
+}
+
+.Contact a,
+.Contact a:hover {
+    color: white;
+}
