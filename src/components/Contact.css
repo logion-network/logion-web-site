@@ -3,6 +3,10 @@
     background-color: var(--color1-color);
 }
 
+.Contact h2 {
+    font-family: var(--alternative-font);
+}
+
 .Contact h2 em {
     font-style: normal;
     color: var(--color2-color);

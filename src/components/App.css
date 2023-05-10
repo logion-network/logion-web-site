@@ -1,3 +1,7 @@
+.App {
+    overflow: hidden;
+}
+
 .App .content {
     --header-height: 84px;
     --content-base-padding: 50px;
@@ -8,4 +12,10 @@
 .App .content > *:not(:first-child) {
     padding-top: var(--content-base-padding);
     padding-bottom: var(--content-base-padding);
+}
+
+@media screen and (max-width: 767px) {
+    .App .content {
+        --header-height: 252px;
+    }
 }

@@ -11,14 +11,14 @@ export default function Banner(props: Props) {
     return (
         <Container className="Banner">
             <Row>
-                <Col>
+                <Col md={6}>
                     <div className="text-container">
                         <BannerText
                             { ...props }
                         />
                     </div>
                 </Col>
-                <Col>
+                <Col md={6}>
                     <div className="image-container">
                         { props.image }
                     </div>

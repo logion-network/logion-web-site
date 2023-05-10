@@ -11,15 +11,13 @@
     padding-top: var(--smaller-top);
 }
 
+.Logo img.horizontal,
 .Logo.smaller img.vertical {
     display: none;
 }
 
-.Logo img.horizontal {
-    display: none;
-}
-
-.Logo.smaller img.horizontal {
+.Logo.smaller img.horizontal,
+.Logo img.vertical {
     display: inline-block;
 }
 

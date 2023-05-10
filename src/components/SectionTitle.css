@@ -1,6 +1,7 @@
 h2.SectionTitle {
+    font-family: var(--alternative-font);
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
     line-height: var(--bs-body-line-height);
 }

@@ -15,7 +15,7 @@ export function OneByTwoTextImage(props: Props) {
         <div className={ `OneByTwoTextImage ${props.theme}` }>
             <Container>
                 <Row>
-                    <Col>
+                    <Col md={6}>
                         <div className="text-container">
                             <div>
                                 <SectionTitle text={ props.title } barColor={ props.theme === "bright" ? "var(--color2-color)" : "white" }/>
@@ -25,7 +25,7 @@ export function OneByTwoTextImage(props: Props) {
                             </div>
                         </div>
                     </Col>
-                    <Col>
+                    <Col md={6}>
                         <div className="image-container">
                             { props.images }
                         </div>
