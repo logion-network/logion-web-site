@@ -3,11 +3,10 @@ import ExternalLink from './ExternalLink';
 import { DISCORD_URL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, TWITTER_URL } from '../Content';
 import "./Social.css";
 
-const ICONS_COLOR = "var(--color1-color)";
-const ICONS_SIZE = 20;
-
 export interface Props {
     smaller: boolean;
+    color: string;
+    iconSize: number;
 }
 
 export default function Social(props: Props) {
@@ -20,8 +19,8 @@ export default function Social(props: Props) {
                     href={ LINKEDIN_URL }
                 >
                     <Linkedin
-                        color={ ICONS_COLOR }
-                        size={ ICONS_SIZE }
+                        color={ props.color }
+                        size={ props.iconSize }
                     />
                 </ExternalLink>
             }
@@ -31,8 +30,8 @@ export default function Social(props: Props) {
                     href={ TWITTER_URL }
                 >
                     <Twitter
-                        color={ ICONS_COLOR }
-                        size={ ICONS_SIZE }
+                        color={ props.color }
+                        size={ props.iconSize }
                     />
                 </ExternalLink>
             }
@@ -42,8 +41,8 @@ export default function Social(props: Props) {
                     href={ DISCORD_URL }
                 >
                     <Discord
-                        color={ ICONS_COLOR }
-                        size={ ICONS_SIZE }
+                        color={ props.color }
+                        size={ props.iconSize }
                     />
                 </ExternalLink>
             }
@@ -53,8 +52,8 @@ export default function Social(props: Props) {
                     href={ GITHUB_URL }
                 >
                     <Github
-                        color={ ICONS_COLOR }
-                        size={ ICONS_SIZE }
+                        color={ props.color }
+                        size={ props.iconSize }
                     />
                 </ExternalLink>
             }
@@ -64,8 +63,8 @@ export default function Social(props: Props) {
                     href={ MEDIUM_URL }
                 >
                     <Medium
-                        color={ ICONS_COLOR }
-                        size={ ICONS_SIZE }
+                        color={ props.color }
+                        size={ props.iconSize }
                     />
                 </ExternalLink>
             }

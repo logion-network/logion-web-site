@@ -1,10 +1,10 @@
-.TextImageCols.dark {
+.OneByTwoTextImage.dark {
     color: white;
     background: linear-gradient(180deg, var(--color2-color) 0%, var(--color1-color) 100%);
 }
 
-.TextImageCols .text-container,
-.TextImageCols .image-container {
+.OneByTwoTextImage .text-container,
+.OneByTwoTextImage .image-container {
     height: 100%;
     display: flex;
     justify-content: space-around;

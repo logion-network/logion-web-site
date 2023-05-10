@@ -1,0 +1,26 @@
+.Member .image-container > * {
+    width: 100%;
+}
+
+.Member .image-container {
+    margin-bottom: 18px;
+}
+
+.Member .name {
+    margin-bottom: 8px;
+    font-family: var(--alternative-font);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.Member .title {
+    margin-bottom: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color1-color);
+    font-weight: bold;
+}
+
+.Member .description {
+    margin-bottom: 18px;
+}

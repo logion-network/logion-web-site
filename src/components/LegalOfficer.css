@@ -1,0 +1,26 @@
+.LegalOfficer .image-container > * {
+    width: 100%;
+}
+
+.LegalOfficer .image-container {
+    margin-bottom: 18px;
+}
+
+.LegalOfficer .name {
+    margin-bottom: 8px;
+    font-family: var(--alternative-font);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.LegalOfficer .location {
+    margin-bottom: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color1-color);
+    font-weight: bold;
+}
+
+.LegalOfficer .linkedIn {
+    text-align: center;
+}

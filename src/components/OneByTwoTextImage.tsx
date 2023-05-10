@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SectionTitle from "./SectionTitle";
-import "./TextImageCols.css";
+import "./OneByTwoTextImage.css";
 
 export interface Props {
     title: ReactNode;
@@ -10,9 +10,9 @@ export interface Props {
     theme: "bright" | "dark";
 }
 
-export function TextImageCols(props: Props) {
+export function OneByTwoTextImage(props: Props) {
     return (
-        <div className={ `TextImageCols ${props.theme}` }>
+        <div className={ `OneByTwoTextImage ${props.theme}` }>
             <Container>
                 <Row>
                     <Col>

@@ -3,7 +3,8 @@
     padding-bottom: 50px;
 }
 
-.Footer a {
+.Footer a,
+.Footer a:hover {
     color: var(--default-color);
 }
 
