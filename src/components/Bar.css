@@ -1,0 +1,6 @@
+.Bar {
+    display: inline-block;
+    height: 5px;
+    width: 75px;
+    vertical-align: text-top;
+}
