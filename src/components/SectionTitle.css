@@ -1,0 +1,11 @@
+h2.SectionTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: var(--bs-body-line-height);
+}
+
+h2.SectionTitle em {
+    font-style: normal;
+    color: var(--color2-color);
+}

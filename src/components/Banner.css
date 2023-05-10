@@ -1,4 +1,8 @@
-.Banner {
-    padding-top: 150px;
-    padding-bottom: 150px;
+.Banner .image-container,
+.Banner .text-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }

@@ -1,18 +1,40 @@
+import { ReactNode } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import FooterText, { Props } from "./FooterText";
+import Image from "./Image";
 import "./Footer.css";
+
+export interface Props {
+    summary: ReactNode;
+    legal: ReactNode;
+    credit: ReactNode;
+}
 
 export default function Footer(props: Props) {
     return (
         <div className="Footer">
             <Container>
                 <Row>
-                    <Col>
-                        <FooterText
-                            { ...props }
-                        />
+                    <Col md={3}>
+                        <div className="logo-container">
+                            <Image fileName="logo-horizontal.png" alt="logion logo" width="80%"/>
+                        </div>
                     </Col>
-                    <Col>
+                    <Col md={5}>
+                        <div className="summary-container">
+                            <div className="summary">
+                                { props.summary }
+                            </div>
+                        </div>
+                    </Col>
+                    <Col md={4}>
+                        <div className="legal-credit-container">
+                            <div className="legal">
+                                { props.legal }
+                            </div>
+                            <div className="credit">
+                                { props.credit }
+                            </div>
+                        </div>
                     </Col>
                 </Row>
             </Container>

@@ -11,6 +11,18 @@
     padding-top: var(--smaller-top);
 }
 
+.Logo.smaller img.vertical {
+    display: none;
+}
+
+.Logo img.horizontal {
+    display: none;
+}
+
+.Logo.smaller img.horizontal {
+    display: inline-block;
+}
+
 @keyframes logo-normal-to-small {
     from {
         padding-top: var(--normal-top);

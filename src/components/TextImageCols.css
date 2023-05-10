@@ -1,0 +1,13 @@
+.TextImageCols.dark {
+    color: white;
+    background: linear-gradient(180deg, var(--color2-color) 0%, var(--color1-color) 100%);
+}
+
+.TextImageCols .text-container,
+.TextImageCols .image-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}

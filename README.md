@@ -10,6 +10,23 @@ Variables with type `string | undefined` may contain plain text (actual text goe
 
 The blocks delimited by `{ /* START EDIT */ }` and `{ /* STOP EDIT */ }` tags may contain plain text or simple XHTML content (e.g. `p`, `em`, `br` tags).
 
+### Assets
+All images should be added to the [`media`](https://github.com/logion-network/logion-web-site/tree/main/src/public/media) folder.
+
+For example, in order to insert an image named `polkadot.svg` and located in the `media` folder,
+the following code may be used (see Content file above for examples):
+
+```jsx
+<Image
+    fileName="media/polkadot.svg"
+    alt="polkadot logo"
+    width="80%"
+/>
+```
+
+The `width` parameter enables some control on the size of the image. There is also a `height` parameter.
+Any valid HTML size may be used there.
+
 ### Header
 The header is the block containing the logo and social media links.
 

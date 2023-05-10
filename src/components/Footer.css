@@ -1,6 +1,44 @@
 .Footer {
     padding-top: 50px;
     padding-bottom: 50px;
-    color: white;
-    background: linear-gradient(180deg, var(--color2-color) 0%, var(--color1-color) 100%);
+}
+
+.Footer a {
+    color: var(--default-color);
+}
+
+.Footer .logo-container {
+    text-align: left;
+}
+
+.Footer .logo-container,
+.Footer .summary-container,
+.Footer .legal-credit-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Footer .summary {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: var(--alternative-font);
+    color: var(--color1-color);
+}
+
+.Footer .summary strong {
+    font-weight: 700;
+}
+
+.Footer .legal {
+    margin-bottom: 32px;
+}
+
+.Footer .legal p {
+    margin-bottom: 1rem;
+}
+
+.Footer .credit {
+    font-size: 0.75rem;
 }
