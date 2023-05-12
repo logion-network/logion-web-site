@@ -73,7 +73,8 @@ export const CONTENT: ReactNode = (<>
         card1={{
             image: {
                 fileName: "media/blockchain.png",
-                alt: "blockchain"
+                alt: "blockchain",
+                height: "129px",
             },
             title: "A blockchain by judicial officers",
             text: (<>
@@ -86,7 +87,8 @@ export const CONTENT: ReactNode = (<>
         card2={{
             image: {
                 fileName: "media/ipfs.png",
-                alt: "blockchain"
+                alt: "blockchain",
+                height: "129px",
             },
             title: "A private & encrypted IPFS network",
             text: (<>
@@ -100,7 +102,8 @@ export const CONTENT: ReactNode = (<>
         card3={{
             image: {
                 fileName: "media/verified_issuers.png",
-                alt: "blockchain"
+                alt: "blockchain",
+                height: "129px",
             },
             title: "A network of verified issuers",
             text: (<>
@@ -114,7 +117,8 @@ export const CONTENT: ReactNode = (<>
         card4={{
             image: {
                 fileName: "media/zkp.png",
-                alt: "blockchain"
+                alt: "blockchain",
+                height: "129px",
             },
             title: "A ZKP system of evidence record",
             text: (<>
