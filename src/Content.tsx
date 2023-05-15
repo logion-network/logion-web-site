@@ -312,7 +312,7 @@ export const CONTENT: ReactNode = (<>
                     Scrum Master
                     { /* STOP EDIT */ }
                 </>}
-                linkedIn="https://www.linkedin.com/in/gdethier/"
+                linkedIn="https://www.linkedin.com/in/gerarddethier/"
             />,
             <Member
                 image="media/benoit.png"
@@ -359,7 +359,7 @@ export const CONTENT: ReactNode = (<>
         members={[
             <LegalOfficer
                 image="media/MarcSchmitz.png"
-                name="Patrick Gielen"
+                name="Marc Schmitz"
                 location="Belgium"
                 linkedIn="https://www.linkedin.com/in/marc-schmitz-91927451/"
             />,
@@ -367,7 +367,7 @@ export const CONTENT: ReactNode = (<>
                 image="media/ElineDuysens.png"
                 name="Eline Duysens"
                 location="Belgium"
-                linkedIn="https://www.linkedin.com/in/eline-duysens-10385896/"
+                linkedIn="https://www.linkedin.com/in/eline-duysens-lepape-10385896/"
             />,
             <LegalOfficer
                 image="media/AlainBarland.png"
