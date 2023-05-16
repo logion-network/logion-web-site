@@ -421,7 +421,7 @@ export const CONTENT: ReactNode = (<>
                 image="media/RuiMiguelSimao.png"
                 name="Rui Miguel Simão"
                 location="Portugal"
-                linkedIn="https://www.linkedin.com/in/rui-miguel-sim%C3%A3o-3b02a926/"
+                linkedIn="https://www.linkedin.com/in/rui-sim%C3%A3o-3b02a926/"
             />,
             <LegalOfficer
                 image="media/PedrosoLeal.png"
@@ -464,7 +464,7 @@ export const FOOTER_LEGAL: ReactNode = <>
 </>;
 export const FOOTER_CREDIT: ReactNode = <>
     { /* START EDIT */ }
-    <strong>Credit:</strong> web design based on a SlidesCarnival template
-    under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons License Attribution 4.0 International</a>.
+    <!-- <strong>Credit:</strong> web design based on a SlidesCarnival template
+    under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons License Attribution 4.0 International</a>. -->
     { /* STOP EDIT */ }
 </>;
