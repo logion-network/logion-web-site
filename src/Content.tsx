@@ -15,7 +15,7 @@ import { MenuItem } from "./components/Menu";
 export const CONTACT_EMAIL: string = "info@logion.network";
 export const LINKEDIN_URL: string | undefined = "https://www.linkedin.com/company/logion-network/";
 export const TWITTER_URL: string | undefined = "https://twitter.com/logion_network";
-export const DISCORD_URL: string | undefined = "https://discord.com/channels/786689460178911273/1085568507158208594";
+export const DISCORD_URL: string | undefined = "https://discord.gg/FvnxrtCYr6";
 export const GITHUB_URL: string | undefined = "https://github.com/logion-network";
 export const MEDIUM_URL: string | undefined = "https://medium.com/@logion";
 
