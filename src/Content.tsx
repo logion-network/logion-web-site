@@ -27,15 +27,10 @@ export const MENU: MenuItem[] = [
         external: true,
     },
     {
-        text: "Technology",
+        text: "Documentation",
         link: "https://logion.network",
         external: true,
-    },
-    {
-        text: "Community",
-        link: "https://logion.network",
-        external: true,
-    },
+    }
 ];
 
 // Content
