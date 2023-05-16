@@ -23,12 +23,12 @@ export const MEDIUM_URL: string | undefined = "https://medium.com/@logion";
 export const MENU: MenuItem[] = [
     {
         text: "Whitepaper",
-        link: "https://logion.network",
+        link: "https://docs.logion.network/logion-white-paper/",
         external: true,
     },
     {
         text: "Documentation",
-        link: "https://logion.network",
+        link: "https://logion-network.github.io/logion-api/",
         external: true,
     }
 ];
