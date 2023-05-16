@@ -1,5 +1,5 @@
 import Header from './Header';
-import { CONTENT, FOOTER_CREDIT, FOOTER_LEGAL, FOOTER_SUMMARY } from '../Content';
+import { CONTENT, FOOTER_LEGAL, FOOTER_SUMMARY } from '../Content';
 import Footer from './Footer';
 import "./App.css";
 
@@ -13,7 +13,6 @@ export default function App() {
             <Footer
                 summary={ FOOTER_SUMMARY }
                 legal={ FOOTER_LEGAL }
-                credit={ FOOTER_CREDIT }
             />
         </div>
   );

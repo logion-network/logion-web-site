@@ -6,7 +6,6 @@ import "./Footer.css";
 export interface Props {
     summary: ReactNode;
     legal: ReactNode;
-    credit: ReactNode;
 }
 
 export default function Footer(props: Props) {
@@ -27,13 +26,8 @@ export default function Footer(props: Props) {
                         </div>
                     </Col>
                     <Col md={4}>
-                        <div className="legal-credit-container">
-                            <div className="legal">
-                                { props.legal }
-                            </div>
-                            <div className="credit">
-                                { props.credit }
-                            </div>
+                        <div className="legal">
+                            { props.legal }
                         </div>
                     </Col>
                 </Row>

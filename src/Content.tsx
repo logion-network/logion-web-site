@@ -462,7 +462,3 @@ export const FOOTER_LEGAL: ReactNode = <>
     <p><a href={`mailto:${ CONTACT_EMAIL }`}>{ CONTACT_EMAIL }</a></p>
     { /* STOP EDIT */ }
 </>;
-export const FOOTER_CREDIT: ReactNode = <>
-    { /* START EDIT */ }
-    { /* STOP EDIT */ }
-</>;
