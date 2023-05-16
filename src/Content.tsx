@@ -244,12 +244,12 @@ export const CONTENT: ReactNode = (<>
             <Image
                 fileName="media/polkadot.svg"
                 alt="polkadot logo"
-                width="80%"
+                width="60%"
             />
             <Image
                 fileName="media/web3f.svg"
                 alt="web3 foundation logo"
-                width="80%"
+                width="60%"
             />
         </>}    
         theme="dark"
