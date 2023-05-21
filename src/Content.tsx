@@ -153,7 +153,7 @@ export const CONTENT: ReactNode = (<>
     <OneByTwoTextImage
         title={<>
             { /* START EDIT */ }
-            A <em>Decentralized</em> Network at the service of the Web3 ecosystem
+            A <em>Decentralized</em> Network Fueling the Tokenization Revolution
             { /* STOP EDIT */ }
         </>}
         paragraphs={<>
