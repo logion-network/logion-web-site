@@ -142,8 +142,8 @@ export const CONTENT: ReactNode = (<>
             title: "A ZKP system of evidence record",
             text: (<>
                 { /* START EDIT */ }
-                Provides proof of records without revealing the content of such records. Anyone, especially through the Logion certificate, can
-                <strong>verify</strong> the existence of credentials (obligations, values, rights, identity, etc.) bound to Real World assets while
+                Provides proof of records without revealing the content of such records. Anyone,through the <em>Logion certificate</em>, can 
+                <strong>verify</strong> the existence of credentials (obligations, values, rights, identity, etc.) bound to Real World assets (digital, physical or financial) and the token while 
                 <strong>preserving privacy and confidentiality</strong>.
                 { /* STOP EDIT */ }
             </>)
@@ -159,7 +159,7 @@ export const CONTENT: ReactNode = (<>
         paragraphs={<>
             { /* START EDIT */ }
             <p>Logion's <em>global</em> Judicial Officers network authenticates identities and confirm the legitimacy of corporations, establishing an <em>unbroken chain of custody</em> for evidence records, as mandated by legal and compliance principles. Verified Issuers, subject to rigorous due diligence by these officers, bear the <em>accountability</em> for the professional content they contribute.</p>
-            <p>This strong foundation enables Logion infrastructure to <em>automatically record and bind</em> vast amounts of token-related data, files and digital assets to <em>millions of tokens</em>. These records are shared by the <em>Logion certificate</em> - bound to each token - through a Zero Knowledge Proof system, preserving confidentiality and privacy while paving the way for the forthcoming wave of tokenization.</p>  { /* STOP EDIT */ }
+            <p>This strong foundation enables Logion infrastructure to <em><strong>automatically record and bind</strong></em> vast amounts of token-related data, files and digital assets to <em><strong>millions of tokens</strong></em>. These records are shared by the <em>Logion certificate</em> - bound to each token - through a Zero Knowledge Proof system, preserving confidentiality and privacy while paving the way for the forthcoming wave of tokenization.</p>  { /* STOP EDIT */ }
         </>}
         images={<>
             <Image
@@ -445,7 +445,7 @@ export const CONTENT: ReactNode = (<>
     <Contact
         title={<>
             { /* START EDIT */ }
-            Want to join the safe <em>digital ownership movement</em>?
+            Want to join the <em>safe digital ownership movement</em> ?
             { /* STOP EDIT */ }
         </>}
         content={<>
@@ -463,7 +463,7 @@ export const CONTENT: ReactNode = (<>
 // Footer
 export const FOOTER_SUMMARY: ReactNode = <>
     { /* START EDIT */ }
-    <strong>Logion</strong>: the blockchain infrastructure<br/> of safe digital ownership.
+    The blockchain Infrastructure<br/> of Safe digital Ownership.
     { /* STOP EDIT */ }
 </>;
 export const FOOTER_LEGAL: ReactNode = <>
