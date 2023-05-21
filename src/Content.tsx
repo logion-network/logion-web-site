@@ -153,20 +153,12 @@ export const CONTENT: ReactNode = (<>
     <OneByTwoTextImage
         title={<>
             { /* START EDIT */ }
-            WEB <em>3</em>
+            A <em>Decentralized</em> Network at the service of the Web3 ecosystem
             { /* STOP EDIT */ }
         </>}
         paragraphs={<>
             { /* START EDIT */ }
-            <p>The public blockchain that genuinely protects all digital assets and related transactions
-                being operated by a decentralized network of legal officers.
-            </p>
-            <p>The logion infrastructure is bringing to the WEB3 a legal protection, legal officers and
-                verified issuers are bringing for decades to the physical world.
-            </p>
-            <p>The only public blockchain infrastructure where token-related data and files are genuinely
-                transformed into certified evidence & tokens are safeguarded by a decentralized network of legal officers.
-            </p>
+            Judicial Officers, crucial components of the logion's decentralized system, authenticate identities, companies and protect the record of evidence, fostering a reliable chain of traceability. Verified Issuers, after Judicial Officers verification, take on responsibility for the professional content they submit. Unified wihtin the logion certificate, their actions strengthen the token economy, enhance trust, and pave the way for the next tokenization revolution of our digital economy.
             { /* STOP EDIT */ }
         </>}
         images={<>
