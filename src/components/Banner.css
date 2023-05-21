@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.Banner .image-container > * {
-    width: 100%;
+.Banner2 .image-container > * {
+    width: 60%;
     margin: 0 auto; /* Add this line */
 }
