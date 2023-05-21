@@ -1,6 +1,11 @@
+.Member .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .Member .image-container > * {
     width: 60%;
-    align-items: center;
 }
 
 .Member .image-container {
