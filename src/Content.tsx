@@ -47,11 +47,6 @@ export const CONTENT: ReactNode = (<>
             Harness the full potential of tokenization with Logion, the groundbreaking blockchain infrastructure that protects the inherent token value.
             { /* STOP EDIT */ }
         </>}
-        thirdText={<>
-            { /* START EDIT */ }
-            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets: logion verifies and binds identities, companies, assets, rights, and obligations with any token on any chain. Experience the power of tokens as tangible and trustworthy digital assets based on a certified representation of token value.
-            { /* STOP EDIT */ }
-        </>}
         image={<>
             <Image
                 fileName="media/network.png"
@@ -64,23 +59,23 @@ export const CONTENT: ReactNode = (<>
         image={<>
             <Image
                 fileName="media/logionSeal.png"
-                alt="logion network"
-                width="100%"
+                alt="logion seal"
+                width="50%"
             />
         </>}
         firstText={<>
             { /* START EDIT */ }
-          The Proof of Law
+            The <em>Proof of Law</em>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-          Say goodbye to the disconnection between on-chain tokens and their associated rights and assets. logion verifies and binds identities, companies, assets, rights, and obligations with any token on any chain
+            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets. logion verifies and binds identities, companies, assets, rights, and obligations with any token on any chain
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
             { /* START EDIT */ }
-           Experience the power of tokens as tangible and trustworthy digital assets based on a certified representation of token value.
+            Experience the power of tokens as tangible and trustworthy digital assets based on a certified representation of token value.
             { /* STOP EDIT */ }
         </>}
     />
