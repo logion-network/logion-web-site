@@ -43,7 +43,7 @@ export const CONTENT: ReactNode = (<>
         </>}
         secondText={<>
             { /* START EDIT */ }
-            Logion sets a vital market standard to <em>uniquely bind identities, companies, proterty</em>, <em>rights</em> and <em>obligations</em> to any digital asset on any chain.
+            Logion sets a vital market standard to uniquely <em>bind identities, companies, IP, real world asset</em>,<em>rights</em> and <em>obligations</em> to any token on any chain.
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
