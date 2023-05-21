@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "https://logion-network.github.io/logion-web-site/static/css/main.83bd8840.css",
+    "main.css": "https://logion-network.github.io/logion-web-site/static/css/main.ea9a2652.css",
     "main.js": "https://logion-network.github.io/logion-web-site/static/js/main.dd496f7a.js",
     "static/js/787.7cd56a6b.chunk.js": "https://logion-network.github.io/logion-web-site/static/js/787.7cd56a6b.chunk.js",
     "static/media/background.png": "https://logion-network.github.io/logion-web-site/static/media/background.bf52d0d8704b977acc59.png",
     "index.html": "https://logion-network.github.io/logion-web-site/index.html",
-    "main.83bd8840.css.map": "https://logion-network.github.io/logion-web-site/static/css/main.83bd8840.css.map",
+    "main.ea9a2652.css.map": "https://logion-network.github.io/logion-web-site/static/css/main.ea9a2652.css.map",
     "main.dd496f7a.js.map": "https://logion-network.github.io/logion-web-site/static/js/main.dd496f7a.js.map",
     "787.7cd56a6b.chunk.js.map": "https://logion-network.github.io/logion-web-site/static/js/787.7cd56a6b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83bd8840.css",
+    "static/css/main.ea9a2652.css",
     "static/js/main.dd496f7a.js"
   ]
 }
