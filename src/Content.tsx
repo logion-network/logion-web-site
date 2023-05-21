@@ -38,17 +38,17 @@ export const CONTENT: ReactNode = (<>
     <Banner
         firstText={<>
             { /* START EDIT */ }
-            All tokenization projects built with the logion infrastructure<br/><em>protect their digital asset holders</em>
+           Empowering Tokens on Any Blockchain as <br/><em>Legal-Grade Digital Assets</em>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-            Logion sets a vital market standard to uniquely <em>bind identities, companies, IP, real world asset</em>,<em>rights</em> and <em>obligations</em> to any token on any chain.
+            Unlock the true potential of tokens with Logion, the groundbreaking solution that materializes their inherent value. Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
             { /* START EDIT */ }
-            Everything that is processed by the logion infrastructure is <strong>legally existing</strong> and <strong>secured overtime</strong> by design.
+            Logion seamlessly verifies and <em>bind</em>, identities, companies, assets, rights, and obligations, transforming tokens into tangible and trustworthy digital assets. Embrace a comprehensive, transparent, and legally robust framework that empowers tokenization initiatives and guarantees the <em>authentic</em> representation of token <em>value</em>. Harness the full potential of tokenization with Logion.
             { /* STOP EDIT */ }
         </>}
         image={<>
