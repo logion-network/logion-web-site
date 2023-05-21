@@ -48,7 +48,7 @@ export const CONTENT: ReactNode = (<>
         </>}
         thirdText={<>
             { /* START EDIT */ }
-            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets: logion seamlessly verifies and <em>bind</em>, identities, companies, assets, rights, and obligations, transforming tokens into tangible and trustworthy digital assets. Embrace a scalable, comprehensive, transparent, and legally robust framework that empowers tokenization initiatives and guarantees the <em>authentic</em> representation of token <em>value</em>.
+            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets: logion verifies and binds identities, companies, assets, rights, and obligations with any token on any chain. Experience the power of tokens as tangible and trustworthy digital assets based on a certified representation of token value.
             { /* STOP EDIT */ }
         </>}
         image={<>
