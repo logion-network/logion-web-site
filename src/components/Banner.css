@@ -1,11 +1,4 @@
-.Banner .image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.Banner .image-container > * {
-    width: 100%;
-}
+.Banner .image-container,
 .Banner .text-container {
     height: 100%;
     display: flex;
