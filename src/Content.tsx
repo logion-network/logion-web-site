@@ -62,7 +62,7 @@ export const CONTENT: ReactNode = (<>
     <TitleFourByFourCards
         title={<>
             { /* START EDIT */ }
-            The<em>Proof of Law/em>
+            The<em>Proof of Law</em>
             { /* STOP EDIT */ }
         </>}
         card1={{
