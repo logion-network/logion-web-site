@@ -158,7 +158,8 @@ export const CONTENT: ReactNode = (<>
         </>}
         paragraphs={<>
             { /* START EDIT */ }
-            Judicial Officers, crucial components of the logion's decentralized system, authenticate identities, companies and protect the record of evidence, fostering a reliable chain of traceability. Verified Issuers, after Judicial Officers verification, take on responsibility for the professional content they submit. Unified wihtin the logion certificate, their actions strengthen the token economy, enhance trust, and pave the way for the next tokenization revolution of our digital economy.
+           <p> Judicial Officers, crucial components of the logion's decentralized system, authenticate identities, companies and protect the record of evidence, fostering a reliable chain of traceability. Verified Issuers, after Judicial Officers verification, take on responsibility for the professional content they submit.</p>
+           <p>This strong foundation paves the way for Logion's automated system to perform large-scale evidence recording of token-related data and file certificates. Unified wihtin the logion certificate, their actions strengthen the token economy, enhance trust, and pave the way for the next tokenization revolution of our digital economy.</p>
             { /* STOP EDIT */ }
         </>}
         images={<>
