@@ -142,9 +142,7 @@ export const CONTENT: ReactNode = (<>
             title: "A ZKP system of evidence record",
             text: (<>
                 { /* START EDIT */ }
-                Provides proof of records without revealing the content of such records. Anyone,through the <em>Logion certificate</em>, can 
-                <strong>verify</strong> the existence of credentials (obligations, values, rights, identity, etc.) bound to Real World assets (digital, physical or financial) and the token while 
-                <strong>preserving privacy and confidentiality</strong>.
+                Provides proof of records without revealing the content of such records. Anyone,through the <strong>Logion certificate</strong>, can <strong>verify</strong> the existence of credentials (obligations, values, rights, identity, etc.) bound to Real World assets (digital, physical or financial) and the token while<strong> preserving privacy and confidentiality</strong>.
                 { /* STOP EDIT */ }
             </>)
         }}
