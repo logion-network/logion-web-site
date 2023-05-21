@@ -1,5 +1,6 @@
 .Member .image-container > * {
     width: 60%;
+    align-items: center;
 }
 
 .Member .image-container {
