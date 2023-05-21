@@ -12,15 +12,15 @@ export default function Banner2(props: Props) {
         <Container className="Banner2">
             <Row>
                 <Col md={6}>
-                    <div className="text-container">
-                        <BannerText
-                            { ...props }
-                        />
+                     <div className="image-container">
+                        { props.image }
                     </div>
                 </Col>
                 <Col md={6}>
-                    <div className="image-container">
-                        { props.image }
+                   <div className="text-container">
+                        <BannerText
+                            { ...props }
+                        />
                     </div>
                 </Col>
             </Row>
