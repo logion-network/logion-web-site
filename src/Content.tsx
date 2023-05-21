@@ -74,12 +74,12 @@ export const CONTENT: ReactNode = (<>
         </>}
         secondText={<>
             { /* START EDIT */ }
-            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.<br/>logion <em>verifies</em> and <em>binds</em> identities, companies, assets, rights, and obligations with any token on any chain.<br/>Experience the power of tokens as tangible and trustworthy digital assets based on a certified representation of token value.
+            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.<br/>logion <em>verifies</em> and <em>binds</em> identities, companies, assets, rights, and obligations with any token on any chain.
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
             { /* START EDIT */ }
-         
+         Experience the power of tokens as tangible and trustworthy digital assets based on a <em>certified representation</em> of token value.
             { /* STOP EDIT */ }
         </>}
     />
