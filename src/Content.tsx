@@ -159,7 +159,7 @@ export const CONTENT: ReactNode = (<>
         paragraphs={<>
             { /* START EDIT */ }
             <p>Logion's <em>global</em> Judicial Officers network authenticates identities and confirm the legitimacy of corporations, establishing an <em>unbroken chain of custody</em> for evidence records, as mandated by legal principles. Verified Issuers, subject to rigorous due diligence by these officers, bear the <em>accountability</em> for the professional content they contribute.</p>
-            <p>This strong foundation enables Logion infrastrcture to <em>automatically</em> record and bind vast amounts of token-related data, files and digital assets to <em>millions</em> of tokens. These records are shared by the <em>Logion certificate</em> - bound to each token - through a Zero Knowledge Proof system, preserving confidentiality and privacy and paving the way for the forthcoming wave of tokenization.</p>  { /* STOP EDIT */ }
+            <p>This strong foundation enables Logion infrastrcture to <em>automatically record and bind</em> vast amounts of token-related data, files and digital assets to <em>millions of tokens</em>. These records are shared by the <em>Logion certificate</em> - bound to each token - through a Zero Knowledge Proof system, preserving confidentiality and privacy while paving the way for the forthcoming wave of tokenization.</p>  { /* STOP EDIT */ }
         </>}
         images={<>
             <Image
