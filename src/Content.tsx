@@ -38,12 +38,12 @@ export const CONTENT: ReactNode = (<>
     <Banner
         firstText={<>
             { /* START EDIT */ }
-            All projects built with the logion infrastructure<br/><em>protect their digital asset holders</em>
+            All tokenization projects built with the logion infrastructure<br/><em>protect their digital asset holders</em>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-            Logion sets a vital market standard to <em>uniquely bind proterty</em>, <em>rights</em> and <em>obligations</em> to any digital asset on any chain.
+            Logion sets a vital market standard to <em>uniquely bind identities, companies, proterty</em>, <em>rights</em> and <em>obligations</em> to any digital asset on any chain.
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
