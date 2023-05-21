@@ -47,6 +47,10 @@ export const CONTENT: ReactNode = (<>
             Harness the full potential of tokenization with Logion, the groundbreaking blockchain infrastructure that protects the inherent token value.
             { /* STOP EDIT */ }
         </>}
+        thirdText={<>
+            { /* START EDIT */ }
+            { /* STOP EDIT */ }
+        </>}
         image={<>
             <Image
                 fileName="media/network.png"
