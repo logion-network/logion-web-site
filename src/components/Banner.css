@@ -7,7 +7,11 @@
     align-items: center;
 }
 
+.Banner2 .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .Banner2 .image-container > * {
     width: 60%;
-    margin: 0 auto; /* Add this line */
 }
