@@ -63,19 +63,19 @@ export const CONTENT: ReactNode = (<>
     <Banner2
         image={<>
             <Image
-                fileName="media/network.png"
+                fileName="media/logionSeal.png"
                 alt="logion network"
-                width="120%"
+                width="100%"
             />
         </>}
         firstText={<>
             { /* START EDIT */ }
-          Say goodbye to the disconnection between on-chain tokens and their associated rights and assets
+          The Proof of Law
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-          logion verifies and binds identities, companies, assets, rights, and obligations with any token on any chain
+          Say goodbye to the disconnection between on-chain tokens and their associated rights and assets. logion verifies and binds identities, companies, assets, rights, and obligations with any token on any chain
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
