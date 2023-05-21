@@ -12,6 +12,7 @@
     align-items: center;
 }
 .OneByTwoTextImage  em {
-    font-style: strong;
+    font-weight: bold;
+    font-style: normal;
     color: var(--color2-color);
 }
