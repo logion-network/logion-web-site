@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Banner from "./components/Banner";
+import Banner from "./components/Banner2";
 import { OneByTwoTextImage } from "./components/OneByTwoTextImage";
 import SimpleSection from "./components/SimpleSection";
 import TitleFourByFourCards from "./components/TitleFourByFourCards";
@@ -59,7 +60,7 @@ export const CONTENT: ReactNode = (<>
             />
         </>}
     />
-    <Banner
+    <Banner2
         image={<>
             <Image
                 fileName="media/network.png"
