@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Banner from "./components/Banner";
-import Banner from "./components/Banner2";
+import Banner2 from "./components/Banner2";
 import { OneByTwoTextImage } from "./components/OneByTwoTextImage";
 import SimpleSection from "./components/SimpleSection";
 import TitleFourByFourCards from "./components/TitleFourByFourCards";
