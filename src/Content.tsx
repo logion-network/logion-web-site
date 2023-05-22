@@ -215,6 +215,29 @@ export const CONTENT: ReactNode = (<>
         }}
         cardsHeight="150px" // Fixed height of cards
     /> */ }
+     <Banner
+        firstText={<>
+            { /* START EDIT */ }
+            The Logion Certificate: The Proof of Law <em>materialization</em>
+            { /* STOP EDIT */ }
+        </>}
+        secondText={<>
+            { /* START EDIT */ }
+            The online logion ZKP certificate with restricted delivery of digital assets and files.
+            { /* STOP EDIT */ }
+        </>}
+        thirdText={<>
+            { /* START EDIT */ }
+            { /* STOP EDIT */ }
+        </>}
+        image={<>
+            <Image
+                fileName="media/certificate.png"
+                alt="logion certificate"
+                width="80%"
+            />
+        </>}
+    />
     <OneByTwoTextImage
         title={<>
             { /* START EDIT */ }
