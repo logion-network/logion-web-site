@@ -368,6 +368,60 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
+        title="Advisors |  Scientific & Ethical Council"
+        members={[
+            <Member
+                image="media/raphael.png"
+                name="Raphaël Rosello"
+                title="Advisor"
+                description={<>
+                    { /* START EDIT */ }
+                    Senior investment banker<br/>
+                    All-Invest Managing Partner
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/rapha%C3%ABl-rossello/"
+            />,
+            <Member
+                image="media/andrea.png"
+                name="Andréa Vistoli"
+                title="Advisor - GTM"
+                description={<>
+                    { /* START EDIT */ }
+                   
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/elieauvray/"
+            />,
+            <Member
+                image="media/stephanie.png"
+                name="Stephanie Flacher"
+                title={ <>Compliance, ethics & risks<br/>co-founder</> }
+                description={<>
+                    { /* START EDIT */ }
+                    Internal Control Framework<br/>
+                    Decentralized Ecosystem development
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/sflacher/"
+            />,
+            <Member
+                image="media/gerard.png"
+                name="Gérard Dethier"
+                title={ <>Backend software architect<br/>co-founder</> }
+                description={<>
+                    { /* START EDIT */ }
+                    Distributed & critical systems expert<br/>
+                    Scrum Master
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/gerarddethier/"
+                </>}
+                linkedIn="https://www.linkedin.com/in/patrick-gielen-4a4a6468/"
+            />,
+        ]}
+    />
+    <Team
         title={ <>First European legal officers<br/>in the logion network</> }
         members={[
             <LegalOfficer
