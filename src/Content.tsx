@@ -278,10 +278,9 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/david.png"
                 name="David Schmitz"
-                title="President | founder"
+                title="Vision<br/>Founder"
                 description={<>
                     { /* START EDIT */ }
-                    Vision<br/>
                     Community Leader (Tech and Legal)<br/>
                     Logion Chief Evangelist<br/>
                     Polkadot Head Ambassador
@@ -292,7 +291,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/elie.png"
                 name="Elie Auvray"
-                title="Co-President | co-founder"
+                title="Managing Director<br/>Co-founder"
                 description={<>
                     { /* START EDIT */ }
                     Managing Director<br/>
@@ -306,7 +305,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/stephanie.png"
                 name="Stephanie Flacher"
-                title={ <>Compliance, ethics & risks | co-founder</> }
+                title={ <>Compliance, ethics & risks<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
                     Internal Control Framework<br/>
@@ -318,7 +317,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/gerard.png"
                 name="Gérard Dethier"
-                title={ <>CTO | co-founder</> }
+                title={ <>CTO<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
                     Distributed & critical systems expert<br/>
@@ -330,7 +329,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/benoit.png"
                 name="Benoît Devos"
-                title={ <>Senior oftware architect | co-founder</> }
+                title={ <>Senior software architect<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
                     Experienced developer (ex-Eurocontrol)<br/>
@@ -342,7 +341,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/casey.png"
                 name="Casey Joly"
-                title={ <>Regulated professions lead | co-founder</> }
+                title={ <>Regulated professions lead<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
                     Lawyer at the Paris Bar, Intellectual Property expert, more than 20 years of
@@ -355,7 +354,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/patrick.png"
                 name="Patrick Gielen"
-                title={ <>Logion legal officers lead | co-founder</> }
+                title={ <>Logion legal officers lead<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
                     Belgian Legal Officer,
@@ -368,7 +367,7 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
-        title="Advisors&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Scientific & Ethical Council"
+        title="Advisors <em>___________________</em> Logion Scientific & Ethical Council"
         members={[
             <Member
                 image="media/raphael.png"
