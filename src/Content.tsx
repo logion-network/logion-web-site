@@ -456,7 +456,7 @@ export const CONTENT: ReactNode = (<>
                 <li>Since its inception, <strong>Wallonie Entreprendre</strong>, a public sovereign fund (Belgium) has been supporting the developpment of the project</li>
                 <li>Since June 2022, logion has been selected by <strong>Outlier Ventures</strong>, the leading web3 and metaverse accelerator and investor</li>
                 <li><strong>Primal Capital</strong>, A global Web3 fund backing culture shifting ideas and innovations</li>
-                <li>In January 2022, logion recieved a grant from <strong>The Web3 foundation</strong> for its innovative social recovery and multisig capabilties</li>
+                <li>In January 2022, logion recieved a grant from <strong>The Web3 Foundation</strong> for its innovative social recovery and multisig capabilties</li>
             </ul>
             { /* STOP EDIT */ }
         </>}
