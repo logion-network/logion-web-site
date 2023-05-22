@@ -218,12 +218,12 @@ export const CONTENT: ReactNode = (<>
      <Banner
         firstText={<>
             { /* START EDIT */ }
-            The Logion Certificate: The Proof of Law <em>materialization</em>
+            The Logion Certificate:<br/> Proof of Law <em>materialization</em>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-            The online logion ZKP certificate with restricted delivery of digital assets and files.
+            The online logion zero knowledge proof certificate with restricted delivery of digital assets and files.
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
@@ -231,8 +231,8 @@ export const CONTENT: ReactNode = (<>
             <ul>
                 <li><em>Token-gated</em>: restricted delivery of assets and documents to token owner after authentication (eg: metamask, ledger)</li>
                 <li><em>Zero-knowledge</em>: on-chain proof of existence without revealing content</li>
-                <li><em>Clear</em> Intellectual Property rights (art NFT context)</li>
-                <li><em>Immutably bind</em> to the minted token (token-side, multi-chain support)</li>
+                <li><em>Clear</em> Intellectual Property rights (IP-related NFT context)</li>
+                <li><em>Immutably bound</em> to the minted token (token-side, multi-chain support)</li>
                 <li><em>Tools to verify</em> assets and documents authenticity</li>
             </ul>
             { /* STOP EDIT */ }
