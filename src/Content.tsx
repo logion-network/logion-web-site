@@ -228,6 +228,13 @@ export const CONTENT: ReactNode = (<>
         </>}
         thirdText={<>
             { /* START EDIT */ }
+            <ul>
+                <li><em>Token-gated</em>: restricted delivery of assets and documents to token owner after authentication (eg: metamask, ledger)
+                <li><em>Zero-knowledge</em>: on-chain proof of existence without revealing content
+                <li><em>Clear</em> Intellectual Property rights (art NFT context)
+                <li><em>Immutably bind</em> to the minted token (token-side, multi-chain support)
+                <li><em>Tools to verify</em> assets and documents authenticity
+            </ul>
             { /* STOP EDIT */ }
         </>}
         image={<>
