@@ -367,11 +367,11 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
-        title="Advisors | | | | | | Logion Scientific & Ethical Council"
+        title={<>&nbsp;Advisors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Logion Scientific & Ethical Council</>}
         members={[
             <Member
                 image="media/raphael.png"
-                name="Raphaël<br/>Rosello"
+                name={<>Raphaël<br/>Rosello</>}
                 title="Advisor"
                 description={<>
                     { /* START EDIT */ }
