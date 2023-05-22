@@ -278,7 +278,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/david.png"
                 name="David Schmitz"
-                title="Vision<br/>Founder"
+                title={ <>Vision<br/>Founder" }
                 description={<>
                     { /* START EDIT */ }
                     Community Leader (Tech and Legal)<br/>
@@ -291,7 +291,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/elie.png"
                 name="Elie Auvray"
-                title="Managing Director<br/>Co-founder"
+                title={ <>Managing Director<br/>Co-founder }
                 description={<>
                     { /* START EDIT */ }
                     Managing Director<br/>
