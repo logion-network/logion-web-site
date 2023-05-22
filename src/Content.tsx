@@ -464,7 +464,7 @@ export const CONTENT: ReactNode = (<>
             <Image
                 fileName="media/investors.png"
                 alt="investors"
-                width="60%"
+                width="80%"
             />
         </>}    
         theme="dark"
