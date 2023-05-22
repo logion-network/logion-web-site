@@ -453,9 +453,10 @@ export const CONTENT: ReactNode = (<>
         paragraphs={<>
             { /* START EDIT */ }
             <ul>
-                <li>Since its inception, Wallonie Enterprendre, a public overeign fund (Belgium) among the co-founders, has been supporting the developpment of the project</li>
-                <li>Since June 2022, logion has been supported by Outlier Ventures, the leading web3 and metaverse accelerator and investor</li>
+                <li>Since its inception, Wallonie Enterprendre, a public sovereign fund (Belgium) has been supporting the developpment of the project</li>
+                <li>Since June 2022, logion has been selected by Outlier Ventures, the leading web3 and metaverse accelerator and investor</li>
                 <li>Primal Ventures, A global Web3 fund backing culture shifting ideas and innovations</li>
+                <li>In January 2022, logion recieved a grant from the Web3 foundation for its innovative social recovery and multigsig capabilties</li>
             </ul>
             { /* STOP EDIT */ }
         </>}
