@@ -5,7 +5,7 @@ import { OneByTwoTextImage } from "./components/OneByTwoTextImage";
 import SimpleSection from "./components/SimpleSection";
 import TitleFourByFourCards from "./components/TitleFourByFourCards";
 import Image from "./components/Image";
-import OneByFourCards from "./components/OneByFourCards";
+// import OneByFourCards from "./components/OneByFourCards";
 import Team from "./components/Team";
 import Member from "./components/Member";
 import LegalOfficer from "./components/LegalOfficer";
