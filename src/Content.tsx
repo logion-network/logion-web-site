@@ -452,20 +452,16 @@ export const CONTENT: ReactNode = (<>
         </>}
         paragraphs={<>
             { /* START EDIT */ }
-            <p>When it comes to bring trust within the internet of blockchains, interoperability is key.</p>
-            <p>The logion open source software platform is based on the Substrate and Polkadot technology.</p>
-            <p>As the Web3 Foundation, Logion believes in:<br/>"a decentralized and fair internet where users control their own data, identity and destiny."</p>
+            <ul>
+                <li>Since its inception, Wallonie Enterprendre, a public overeign fund (Belgium) among the co-founders, has been supporting the developpment of the project</li>
+                <li>Since June 2022, logion has been supported by Outlier Ventures, the leading web3 and metaverse accelerator and investor</li>
+                <li>Primal Ventures, A global Web3 fund backing culture shifting ideas and innovations</li>
             { /* STOP EDIT */ }
         </>}
         images={<>
             <Image
-                fileName="media/polkadot.svg"
-                alt="polkadot logo"
-                width="60%"
-            />
-            <Image
-                fileName="media/web3f.svg"
-                alt="web3 foundation logo"
+                fileName="media/investors.png"
+                alt="investors"
                 width="60%"
             />
         </>}    
