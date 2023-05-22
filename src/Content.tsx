@@ -28,7 +28,7 @@ export const MENU: MenuItem[] = [
         external: true,
     },
     {
-        text: "Documentation",
+        text: "Documentation (SDK)",
         link: "https://logion-network.github.io/logion-api/",
         external: true,
     }
