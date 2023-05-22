@@ -544,8 +544,9 @@ export const FOOTER_SUMMARY: ReactNode = <>
 </>;
 export const FOOTER_LEGAL: ReactNode = <>
     { /* START EDIT */ }
-    <p>BE / BCE 0684.722.109</p>
-    <p>LU / Aut. Ets. n° 10083691/1</p>
+    <p>LOGION AISBL (International Non-Profit Association)</p>
+    <p>Rue Beckers 17, 1040 Etterbeek, Belgium</p>
+    <p>BCE: 0779.497.245</p>
     <p><a href={`mailto:${ CONTACT_EMAIL }`}>{ CONTACT_EMAIL }</a></p>
     { /* STOP EDIT */ }
 </>;
