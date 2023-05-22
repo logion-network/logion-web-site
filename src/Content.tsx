@@ -367,11 +367,11 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
-        title="Advisors <em>___________________</em> Logion Scientific & Ethical Council"
+        title="Advisors | | | | | | Logion Scientific & Ethical Council"
         members={[
             <Member
                 image="media/raphael.png"
-                name="Raphaël Rosello"
+                name="Raphaël<br/>Rosello"
                 title="Advisor"
                 description={<>
                     { /* START EDIT */ }
@@ -383,33 +383,33 @@ export const CONTENT: ReactNode = (<>
             />,
             <Member
                 image="media/andrea.png"
-                name="Andréa Vistoli"
+                name="Andréa<br/>Vistoli"
                 title="Advisor - GTM"
                 description={<>
                     { /* START EDIT */ }
-                    dzdqsdq
+                    KaméaLabs co-founders, ChaosDAO member, Film Producer (10y+)
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/elieauvray/"
             />,
             <Member
                 image="media/sabine.png"
-                name="Sabine Van Haecke-Lepic"
+                name="Sabine<br/>Van Haecke-Lepic"
                 title={ <>Logion<br/>Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
-                    Phd, Lawyer, Lecturer, Researcher, mediator, arbitrator. AI, Blockchain,Cybersec & IT Law
+                    Phd, Lawyer, Lecturer, Researcher, mediator, arbitrator.<br/>AI, Blockchain,Cybersec & IT Law
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/sabine-van-haecke-lepic-ph-d-37b735140/"
             />,
             <Member
                 image="media/arnaud.png"
-                name="Arnaud Billon"
+                name="Arnaud<br/>Billon"
                 title={ <>Logion<br/>Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
-                    Phd in IP/IT Law. Author.AI Ethics Researcher @ IBM. Responsible Computing Advisor.
+                    Phd in IP/IT Law. Author.<br/>AI Ethics Researcher @ IBM<br/>Responsible Computing Advisor.
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/abillion/"
