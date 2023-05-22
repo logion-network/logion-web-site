@@ -384,7 +384,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/andrea.png"
                 name="Andréa<br/>Vistoli"
-                title="Advisor - GTM"
+                title="Advisor"
                 description={<>
                     { /* START EDIT */ }
                     KaméaLabs co-founders, ChaosDAO member, Film Producer (10y+)
@@ -394,7 +394,7 @@ export const CONTENT: ReactNode = (<>
             />,
             <Member
                 image="media/sabine.png"
-                name="Sabine<br/>Van Haecke-Lepic"
+                name="Sabine Van<br/>Haecke-Lepic"
                 title={ <>Logion<br/>Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
