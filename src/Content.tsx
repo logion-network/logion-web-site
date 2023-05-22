@@ -456,6 +456,7 @@ export const CONTENT: ReactNode = (<>
                 <li>Since its inception, Wallonie Enterprendre, a public overeign fund (Belgium) among the co-founders, has been supporting the developpment of the project</li>
                 <li>Since June 2022, logion has been supported by Outlier Ventures, the leading web3 and metaverse accelerator and investor</li>
                 <li>Primal Ventures, A global Web3 fund backing culture shifting ideas and innovations</li>
+            </ul>
             { /* STOP EDIT */ }
         </>}
         images={<>
