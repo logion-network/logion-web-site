@@ -444,6 +444,33 @@ export const CONTENT: ReactNode = (<>
             />,
         ]}
     />
+    <OneByTwoTextImage
+        title={<>
+            { /* START EDIT */ }
+            <strong>We are proud to be financially supported by:</strong>
+            { /* STOP EDIT */ }
+        </>}
+        paragraphs={<>
+            { /* START EDIT */ }
+            <p>When it comes to bring trust within the internet of blockchains, interoperability is key.</p>
+            <p>The logion open source software platform is based on the Substrate and Polkadot technology.</p>
+            <p>As the Web3 Foundation, Logion believes in:<br/>"a decentralized and fair internet where users control their own data, identity and destiny."</p>
+            { /* STOP EDIT */ }
+        </>}
+        images={<>
+            <Image
+                fileName="media/polkadot.svg"
+                alt="polkadot logo"
+                width="60%"
+            />
+            <Image
+                fileName="media/web3f.svg"
+                alt="web3 foundation logo"
+                width="60%"
+            />
+        </>}    
+        theme="dark"
+    />
     <Contact
         title={<>
             { /* START EDIT */ }
