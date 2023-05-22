@@ -368,7 +368,7 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
-        title="Advisors - Scientific & Ethical Council"
+        title="Advisors             |                Scientific & Ethical Council"
         members={[
             <Member
                 image="media/raphael.png"
@@ -394,28 +394,26 @@ export const CONTENT: ReactNode = (<>
                 linkedIn="https://www.linkedin.com/in/elieauvray/"
             />,
             <Member
-                image="media/stephanie.png"
-                name="Stephanie Flacher"
-                title={ <>Compliance, ethics & risks<br/>co-founder</> }
+                image="media/sabine.png"
+                name="Sabine Sabine Van Haecke-Lepic"
+                title={ <>Logion Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
-                    Internal Control Framework<br/>
-                    Decentralized Ecosystem development
+                    Phd, Lawyer, Lecturer, Researcher, mediator, arbitrator. AI, Blockchain,Cybersec & IT Law
                     { /* STOP EDIT */ }
                 </>}
-                linkedIn="https://www.linkedin.com/in/sflacher/"
+                linkedIn="https://www.linkedin.com/in/sabine-van-haecke-lepic-ph-d-37b735140/"
             />,
             <Member
-                image="media/gerard.png"
-                name="Gérard Dethier"
+                image="media/arnaud.png"
+                name="Arnaud Billon"
                 title={ <>Backend software architect<br/>co-founder</> }
                 description={<>
                     { /* START EDIT */ }
-                    Distributed & critical systems expert<br/>
-                    Scrum Master
+                    Phd in IP/IT Law. Author.AI Ethics Researcher @ IBM. Responsible Computing Advisor.
                     { /* STOP EDIT */ }
                 </>}
-                linkedIn="https://www.linkedin.com/in/gerarddethier/"
+                linkedIn="https://www.linkedin.com/in/abillion/"
             />,
         ]}
     />
