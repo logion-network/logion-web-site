@@ -176,6 +176,8 @@ export const CONTENT: ReactNode = (<>
             { /* STOP EDIT */ }
         </>}
     />
+
+ { /*
     <OneByFourCards
         card1={{
             image: {
@@ -240,6 +242,7 @@ export const CONTENT: ReactNode = (<>
         </>}
         theme="bright"
     />
+*/ }
     <OneByTwoTextImage
         title={<>
             { /* START EDIT */ }
