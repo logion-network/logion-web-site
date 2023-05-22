@@ -539,12 +539,13 @@ export const CONTENT: ReactNode = (<>
 // Footer
 export const FOOTER_SUMMARY: ReactNode = <>
     { /* START EDIT */ }
-    The blockchain Infrastructure<br/> of Safe digital Ownership.
+    The blockchain Infrastructure<br/> of Safe digital Ownership
     { /* STOP EDIT */ }
 </>;
 export const FOOTER_LEGAL: ReactNode = <>
     { /* START EDIT */ }
-    <p>LOGION AISBL (International Non-Profit Association)</p>
+    <p>LOGION AISBL<br/>
+    (International Non-Profit Association)</p>
     <p>Rue Beckers 17, 1040 Etterbeek, Belgium</p>
     <p>BCE: 0779.497.245</p>
     <p><a href={`mailto:${ CONTACT_EMAIL }`}>{ CONTACT_EMAIL }</a></p>
