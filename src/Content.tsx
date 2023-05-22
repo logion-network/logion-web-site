@@ -395,7 +395,7 @@ export const CONTENT: ReactNode = (<>
             />,
             <Member
                 image="media/sabine.png"
-                name="Sabine Sabine Van Haecke-Lepic"
+                name="Sabine Van Haecke-Lepic"
                 title={ <>Logion Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
@@ -407,7 +407,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/arnaud.png"
                 name="Arnaud Billon"
-                title={ <>Backend software architect<br/>co-founder</> }
+                title={ <>Logion Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
                     Phd in IP/IT Law. Author.AI Ethics Researcher @ IBM. Responsible Computing Advisor.
