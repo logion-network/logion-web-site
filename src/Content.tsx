@@ -209,6 +209,7 @@ export const CONTENT: ReactNode = (<>
                 Logion legal officers and verified issuers are identified
                 { /* STOP EDIT */ }
             </>)
+         }} 
         card4={{
             image: {
                 fileName: "media/scale.png",
