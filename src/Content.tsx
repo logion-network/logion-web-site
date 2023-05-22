@@ -176,16 +176,14 @@ export const CONTENT: ReactNode = (<>
             { /* STOP EDIT */ }
         </>}
     />
-    <OneByFourCards
+   { /*    <OneByFourCards
           card1={{
             image: {
                 fileName: "media/compass.png",
                 alt: "compass"
             },
             text: (<>
-                { /* START EDIT */ }
                 Logion legal officers are working under the rules of a strict code of ethics
-                { /* STOP EDIT */ }
             </>)
         }} 
          card2={{
@@ -194,10 +192,8 @@ export const CONTENT: ReactNode = (<>
                 alt: "shield"
             },
             text: (<>
-                { /* START EDIT */ }
                 Logion legal officers are in charge of an official public office
-                { /* STOP EDIT */ }
-            </>)
+              </>)
         }} 
          card3={{
             image: {
@@ -205,10 +201,8 @@ export const CONTENT: ReactNode = (<>
                 alt: "id"
             },
             text: (<>
-                { /* START EDIT */ }
-                Logion legal officers and verified issuers are identified
-                { /* STOP EDIT */ }
-            </>)
+               Logion legal officers and verified issuers are identified
+               </>)
          }} 
         card4={{
             image: {
@@ -216,13 +210,11 @@ export const CONTENT: ReactNode = (<>
                 alt: "scale"
             },
             text: (<>
-                { /* START EDIT */ }
-                Logion legal officers are legally responsible for their actions
-                { /* STOP EDIT */ }
-            </>)
+               Logion legal officers are legally responsible for their actions
+               </>)
         }}
         cardsHeight="150px" // Fixed height of cards
-    />
+    /> */ }
     <OneByTwoTextImage
         title={<>
             { /* START EDIT */ }
