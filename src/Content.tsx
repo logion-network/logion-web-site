@@ -371,7 +371,7 @@ export const CONTENT: ReactNode = (<>
         members={[
             <Member
                 image="media/raphael.png"
-                name={<>Raphaël<br/>Rosello</>}
+                name="Raphaël Rosello"
                 title="Advisor"
                 description={<>
                     { /* START EDIT */ }
@@ -383,7 +383,7 @@ export const CONTENT: ReactNode = (<>
             />,
             <Member
                 image="media/andrea.png"
-                name="Andréa<br/>Vistoli"
+                name="Andréa Vistoli"
                 title="Advisor"
                 description={<>
                     { /* START EDIT */ }
@@ -394,7 +394,7 @@ export const CONTENT: ReactNode = (<>
             />,
             <Member
                 image="media/sabine.png"
-                name="Sabine Van<br/>Haecke-Lepic"
+                name="Sabine Van Haecke-Lepic"
                 title={ <>Logion<br/>Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
@@ -405,7 +405,7 @@ export const CONTENT: ReactNode = (<>
             />,
             <Member
                 image="media/arnaud.png"
-                name="Arnaud<br/>Billon"
+                name="Arnaud Billon"
                 title={ <>Logion<br/>Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
