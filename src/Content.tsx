@@ -453,10 +453,10 @@ export const CONTENT: ReactNode = (<>
         paragraphs={<>
             { /* START EDIT */ }
             <ul>
-                <li>Since its inception, <em>Wallonie Entreprendre</em>, a public sovereign fund (Belgium) has been supporting the developpment of the project</li>
-                <li>Since June 2022, logion has been selected by <em>Outlier Ventures</em>, the leading web3 and metaverse accelerator and investor</li>
-                <li><em>Primal Capital</em>, A global Web3 fund backing culture shifting ideas and innovations</li>
-                <li>In January 2022, logion recieved a grant from <em>The Web3 foundation</em> for its innovative social recovery and multisig capabilties</li>
+                <li>Since its inception, <strong>Wallonie Entreprendre</strong>, a public sovereign fund (Belgium) has been supporting the developpment of the project</li>
+                <li>Since June 2022, logion has been selected by <strong>Outlier Ventures</strong>, the leading web3 and metaverse accelerator and investor</li>
+                <li><strong>Primal Capital</strong>, A global Web3 fund backing culture shifting ideas and innovations</li>
+                <li>In January 2022, logion recieved a grant from <strong>The Web3 foundation</strong> for its innovative social recovery and multisig capabilties</li>
             </ul>
             { /* STOP EDIT */ }
         </>}
