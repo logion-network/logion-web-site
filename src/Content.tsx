@@ -387,10 +387,10 @@ export const CONTENT: ReactNode = (<>
                 title="Advisor"
                 description={<>
                     { /* START EDIT */ }
-                    KaméaLabs co-founders, ChaosDAO member, Film Producer (10y+)
+                    KaméaLabs co-founder, ChaosDAO member, Film Producer(10y+)
                     { /* STOP EDIT */ }
                 </>}
-                linkedIn="https://www.linkedin.com/in/elieauvray/"
+                linkedIn="https://www.linkedin.com/in/avi-etbim/"
             />,
             <Member
                 image="media/sabine.png"
@@ -527,8 +527,8 @@ export const CONTENT: ReactNode = (<>
         content={<>
             { /* START EDIT */ }
             <p>
-                You can <a href={`mailto:${ CONTACT_EMAIL }`}>contact us by e-mail</a> if you would like to get more information about the project,
-                participate and/or follow our Twitter and Linkedin page as well as join
+                If you would like to get more information about the project,
+                follow our Twitter and Linkedin page as well as join
                 our Discord server or explore our GitHub repository (all what we do is OPEN SOURCE).
             </p>
             { /* STOP EDIT */ }
