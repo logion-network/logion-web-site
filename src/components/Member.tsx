@@ -7,7 +7,7 @@ import Bar from "./Bar";
 
 export interface Props {
     image: string;
-    name: ReactNode;
+    name: string;
     title: ReactNode;
     description: ReactNode;
     linkedIn?: string;
