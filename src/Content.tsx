@@ -388,7 +388,7 @@ export const CONTENT: ReactNode = (<>
                 title="Advisor - GTM"
                 description={<>
                     { /* START EDIT */ }
-                   
+dzdqsdq
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/elieauvray/"
@@ -415,9 +415,7 @@ export const CONTENT: ReactNode = (<>
                     Scrum Master
                     { /* STOP EDIT */ }
                 </>}
-                linkedIn="https://www.linkedin.com/in/gerarddethier/"
-                </>}
-                linkedIn="https://www.linkedin.com/in/patrick-gielen-4a4a6468/"
+                linkedIn="https://www.linkedin.com/in/gerarddethier/
             />,
         ]}
     />
