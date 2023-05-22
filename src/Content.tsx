@@ -171,7 +171,7 @@ export const CONTENT: ReactNode = (<>
     <SimpleSection
         paragraphs={<>
             { /* START EDIT */ }
-            <p>In Logion's secure legal and economic framework, independent Judicial Officers manage blockchain nodes, verifying the <em>source and integrity</em> of content. Concurrently, Verified Issuers provide substantial content. This essential collaboration, backed by a reliable infrastructure, positions Logion to <em>massively scale</em> its protective services, thereby guaranteeing safety and value for <em>millions of tokens</em>.
+            <p>In Logion's secure legal and economic framework, independent Judicial Officers manage blockchain nodes, verifying the <em>source and integrity</em> of content. Concurrently, Verified Issuers provide <em>substantial</em> information. This essential collaboration, backed by a highly scalable software platform, positions Logion to <em>massively streamline</em> its protective services, thereby guaranteeing safety and value for <em>billions of tokens</em>.
             </p>
             { /* STOP EDIT */ }
         </>}
