@@ -368,7 +368,7 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
-        title="Advisors |  Scientific & Ethical Council"
+        title="Advisors - Scientific & Ethical Council"
         members={[
             <Member
                 image="media/raphael.png"
@@ -388,7 +388,7 @@ export const CONTENT: ReactNode = (<>
                 title="Advisor - GTM"
                 description={<>
                     { /* START EDIT */ }
-dzdqsdq
+                    dzdqsdq
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/elieauvray/"
@@ -415,7 +415,7 @@ dzdqsdq
                     Scrum Master
                     { /* STOP EDIT */ }
                 </>}
-                linkedIn="https://www.linkedin.com/in/gerarddethier/
+                linkedIn="https://www.linkedin.com/in/gerarddethier/"
             />,
         ]}
     />
