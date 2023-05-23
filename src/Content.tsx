@@ -343,9 +343,7 @@ export const CONTENT: ReactNode = (<>
                 title={<>Regulated professions lead<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
-                    Lawyer at the Paris Bar, Intellectual Property expert, more than 20 years of
-                    international experience both as trademark counsel (contract drafting, due diligence)
-                    and as an IP litigator
+                    Lawyer at the Paris Bar, Intellectual Property expert, more than 20 years of international experience both as trademark counsel and as an IP litigator.
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/casey-joly/"
