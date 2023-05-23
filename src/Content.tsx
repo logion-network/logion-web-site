@@ -281,8 +281,8 @@ export const CONTENT: ReactNode = (<>
                 title={<>Vision<br/>Founder</> }
                 description={<>
                     { /* START EDIT */ }
-                    Community Leader (Tech and Legal)<br/>
-                    Logion Chief Evangelist<br/>
+                    Community Lead <br/>
+                    Chief Evangelist<br/>
                     Polkadot Head Ambassador
                     { /* STOP EDIT */ }
                 </>}
@@ -294,8 +294,7 @@ export const CONTENT: ReactNode = (<>
                 title={<>Managing Director<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
-                    Managing Director<br/>
-                    Strategy, Execution<br/>
+                    Execution, strategy<br/>
                     Product Officer<br/>
                     Open source & privacy lead
                     { /* STOP EDIT */ }
