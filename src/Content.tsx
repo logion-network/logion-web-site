@@ -74,7 +74,7 @@ export const CONTENT: ReactNode = (<>
         </>}
         secondText={<>
             { /* START EDIT */ }
-            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.<br/>logion <em>verifies</em> and <em>binds</em> identities, companies, assets, rights, and obligations with any token on any chain.
+            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.<br/>Logion <em>verifies</em> and <em>binds</em> identities, companies, assets, rights, and obligations with any token on any chain.
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
@@ -240,7 +240,7 @@ export const CONTENT: ReactNode = (<>
         image={<>
             <Image
                 fileName="media/certificate.png"
-                alt="logion certificate"
+                alt="Logion certificate"
                 width="80%"
             />
         </>}
@@ -254,7 +254,7 @@ export const CONTENT: ReactNode = (<>
         paragraphs={<>
             { /* START EDIT */ }
             <p>When it comes to bring trust within the internet of blockchains, interoperability is key.</p>
-            <p>The logion open source software platform is based on the Substrate and Polkadot technology.</p>
+            <p>The Logion open source software platform is based on the Substrate and Polkadot technology.</p>
             <p>As the Web3 Foundation, Logion believes in:<br/>"a decentralized and fair internet where users control their own data, identity and destiny."</p>
             { /* STOP EDIT */ }
         </>}
@@ -273,7 +273,7 @@ export const CONTENT: ReactNode = (<>
         theme="dark"
     />
     <Team
-        title="Who's building logion?"
+        title="Who's building Logion?"
         members={[
             <Member
                 image="media/david.png"
@@ -416,7 +416,7 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
-        title={ <>First European legal officers<br/>in the logion network</> }
+        title={ <>First European legal officers<br/>in the Logion network</> }
         members={[
             <LegalOfficer
                 image="media/MarcSchmitz.png"
@@ -502,9 +502,9 @@ export const CONTENT: ReactNode = (<>
             { /* START EDIT */ }
             <ul>
                 <li>Since its inception, <strong>Wallonie Entreprendre</strong>, a public sovereign fund (Belgium) has been supporting the developpment of the project</li>
-                <li>Since June 2022, logion has been selected by <strong>Outlier Ventures</strong>, the leading web3 and metaverse accelerator and investor</li>
+                <li>Since June 2022, Logion has been selected by <strong>Outlier Ventures</strong>, the leading web3 and metaverse accelerator and investor</li>
                 <li><strong>Primal Capital</strong>, A global Web3 fund backing culture shifting ideas and innovations</li>
-                <li>In January 2022, logion recieved a grant from <strong>The Web3 Foundation</strong> for its innovative social recovery and multisig capabilties</li>
+                <li>In January 2022, Logion recieved a grant from <strong>The Web3 Foundation</strong> for its innovative social recovery and multisig capabilties</li>
             </ul>
             { /* STOP EDIT */ }
         </>}
