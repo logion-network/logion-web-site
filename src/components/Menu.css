@@ -25,8 +25,9 @@
 
 .Menu a {
     text-decoration: none;
+    font-weight: bold;
     display: inline-block;
-    color: var(--color2-color);
+    color: var(--color1-color);
 }
 
 .Menu a:hover {
