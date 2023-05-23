@@ -386,7 +386,7 @@ export const CONTENT: ReactNode = (<>
                 title="Advisor"
                 description={<>
                     { /* START EDIT */ }
-                    KaméaLabs co-founder, ChaosDAO member, Film Producer(10y+)
+                    KaméaLabs co-founder<br/>ChaosDAO member<br/>Film Producer(10y+)
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/avi-etbim/"
@@ -397,7 +397,7 @@ export const CONTENT: ReactNode = (<>
                 title={ <>Logion<br/>Scientific & Ethical Counsil</> }
                 description={<>
                     { /* START EDIT */ }
-                    Phd, Lawyer, Lecturer, Researcher, mediator, arbitrator.<br/>AI, Blockchain,Cybersec & IT Law
+                    Phd, Lawyer, Lecturer, Researcher<br/>Mediator, arbitrator.<br/>AI, Blockchain,Cybersec & IT Law.
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/sabine-van-haecke-lepic-ph-d-37b735140/"
