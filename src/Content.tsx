@@ -19,6 +19,7 @@ export const TWITTER_URL: string | undefined = "https://twitter.com/logion_netwo
 export const DISCORD_URL: string | undefined = "https://discord.gg/FvnxrtCYr6";
 export const GITHUB_URL: string | undefined = "https://github.com/logion-network";
 export const MEDIUM_URL: string | undefined = "https://medium.com/@logion";
+export const GA_ID: string = "G-VKKGLQM6GR";
 
 // Menu
 export const MENU: MenuItem[] = [
