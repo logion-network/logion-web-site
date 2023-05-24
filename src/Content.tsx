@@ -229,6 +229,7 @@ export const CONTENT: ReactNode = (<>
         thirdText={<>
             { /* START EDIT */ }
             <ul>
+                <li><em>Unified & persistent access to all token-related documentation</em>: all important document and data in one place, authenticated, segregated from the token issuer marketplace</li>
                 <li><em>Token-gated</em>: restricted delivery of assets and documents to token owner after authentication (eg: metamask, ledger)</li>
                 <li><em>Zero-knowledge</em>: on-chain proof of existence without revealing content</li>
                 <li><em>Clear</em> Intellectual Property rights (IP-related NFT context)</li>
