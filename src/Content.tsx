@@ -368,6 +368,18 @@ export const CONTENT: ReactNode = (<>
                 linkedIn="https://www.linkedin.com/in/rapha%C3%ABl-rossello/"
             />,
             <Member
+                image="media/elie.png"
+                name="Elie Auvray"
+                title="Advisor"
+                description={<>
+                    { /* START EDIT */ }
+                    Execution, strategy<br/>
+                    Open source & privacy
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/elieauvray/"
+            />,
+            <Member
                 image="media/sabine.png"
                 name="Sabine Van Haecke-Lepic"
                 title={ <>Logion<br/>Scientific & Ethical Counsil</> }
