@@ -291,19 +291,6 @@ export const CONTENT: ReactNode = (<>
                 linkedIn="https://www.linkedin.com/in/davschmitz/"
             />,
             <Member
-                image="media/elie.png"
-                name="Elie Auvray"
-                title={<>Managing Director<br/>Co-founder</> }
-                description={<>
-                    { /* START EDIT */ }
-                    Execution, strategy<br/>
-                    Product Officer<br/>
-                    Open source & privacy lead
-                    { /* STOP EDIT */ }
-                </>}
-                linkedIn="https://www.linkedin.com/in/elieauvray/"
-            />,
-            <Member
                 image="media/stephanie.png"
                 name="Stephanie Flacher"
                 title={<> Compliance, ethics & risks<br/>Co-founder</> }
@@ -379,17 +366,6 @@ export const CONTENT: ReactNode = (<>
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/rapha%C3%ABl-rossello/"
-            />,
-            <Member
-                image="media/andrea.png"
-                name="Andréa Vistoli"
-                title="Advisor"
-                description={<>
-                    { /* START EDIT */ }
-                    KaméaLabs co-founder<br/>ChaosDAO member<br/>Film Producer(10y+)
-                    { /* STOP EDIT */ }
-                </>}
-                linkedIn="https://www.linkedin.com/in/avi-etbim/"
             />,
             <Member
                 image="media/sabine.png"
