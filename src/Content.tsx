@@ -373,8 +373,8 @@ export const CONTENT: ReactNode = (<>
                 title="Advisor"
                 description={<>
                     { /* START EDIT */ }
-                    Execution, strategy<br/>
-                    Open source & privacy
+                    Associate strategic advisor<br/>
+                    Web3, blockchain and open-source
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/elieauvray/"
