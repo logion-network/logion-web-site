@@ -296,8 +296,9 @@ export const CONTENT: ReactNode = (<>
                 title={<> Compliance, ethics & risks<br/>Co-founder</> }
                 description={<>
                     { /* START EDIT */ }
-                    Internal Control Framework<br/>
-                    Decentralized Ecosystem development
+                    Experienced banker (ex-BNPP),<br/>
+                    Risks management,<br/>
+                    Internal control
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/sflacher/"
@@ -374,7 +375,8 @@ export const CONTENT: ReactNode = (<>
                 description={<>
                     { /* START EDIT */ }
                     Associate strategic advisor<br/>
-                    Web3, blockchain and open-source
+                    Web3, blockchain and open-source<br/>
+                    Founder Jahia, cofounder Logion
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/elieauvray/"
@@ -382,7 +384,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/sabine.png"
                 name="Sabine Van Haecke-Lepic"
-                title={ <>Logion<br/>Scientific & Ethical Counsil</> }
+                title={ <>Chairman Logion's Scientific Council</> }
                 description={<>
                     { /* START EDIT */ }
                     Phd, Lawyer, Lecturer, Researcher<br/>Mediator, arbitrator.<br/>AI, Blockchain,Cybersec & IT Law.
@@ -393,7 +395,7 @@ export const CONTENT: ReactNode = (<>
             <Member
                 image="media/arnaud.png"
                 name="Arnaud Billon"
-                title={ <>Logion<br/>Scientific & Ethical Counsil</> }
+                title={ <>Logion's Scientific Council</> }
                 description={<>
                     { /* START EDIT */ }
                     Phd in IP/IT Law. Author.<br/>AI Ethics Researcher @ IBM<br/>Responsible Computing Advisor.
