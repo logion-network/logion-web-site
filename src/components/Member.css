@@ -12,6 +12,16 @@
     margin-bottom: 18px;
 }
 
+.Member .image-container img {
+    border-radius: 100px;
+}
+
+.Member .image-container img.with-border {
+    border-color: var(--color1-color);
+    border-width: 4px;
+    border-style: solid;
+}
+
 .Member .name {
     margin-bottom: 8px;
     font-family: var(--alternative-font);
@@ -33,4 +43,9 @@
 
 .Member .description {
     margin-bottom: 18px;
+}
+
+.Member a,
+.Member a:hover {
+    color: black;
 }

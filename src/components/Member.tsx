@@ -11,13 +11,14 @@ export interface Props {
     title: ReactNode;
     description: ReactNode;
     linkedIn?: string;
+    border?: boolean;
 }
 
 export default function Member(props: Props) {
     return (
         <div className="Member">
             <div className="image-container">
-                <Image fileName={ props.image } alt={ props.name }/>
+                <Image className={ props.border ? " with-border" : ""} fileName={ props.image } alt={ props.name }/>
             </div>
             <div className="name">{ props.name }</div>
             <div className="title">{ props.title }</div>

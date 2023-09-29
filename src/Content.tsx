@@ -359,7 +359,7 @@ export const CONTENT: ReactNode = (<>
         ]}
     />
     <Team
-        title="Advisors |  Logion Scientific & Ethical Council"
+        title="Advisors | Logion Scientific & Ethical Council"
         members={[
             <Member
                 image="media/raphael.png"
@@ -407,6 +407,30 @@ export const CONTENT: ReactNode = (<>
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/abillion/"
+            />,
+            <Member
+                image="media/max_rebol.jpeg"
+                name="Max Rebol"
+                title="Advisor"
+                description={<>
+                    { /* START EDIT */ }
+                    <ExternalLink href="https://www.harbourindustrial.com/">Harbour Industrial</ExternalLink>
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/maxrebol/"
+                border={true}
+            />,
+            <Member
+                image="media/mario_altenburger.jpeg"
+                name="Mario Altenburger"
+                title="Advisor"
+                description={<>
+                    { /* START EDIT */ }
+                    <ExternalLink href="https://www.harbourindustrial.com/">Harbour Industrial</ExternalLink>
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/marioaltenburger/"
+                border={true}
             />,
         ]}
     />
