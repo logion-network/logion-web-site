@@ -1,0 +1,21 @@
+.Announcement {
+    background-color: var(--color2-color);
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.Announcement a {
+    text-decoration: none;
+}
+
+.Announcement a:hover {
+    text-decoration: underline;
+}
+
+.Announcement a,
+.Announcement a:hover {
+    color: white;
+}

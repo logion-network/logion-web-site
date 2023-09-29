@@ -11,6 +11,8 @@ import Member from "./components/Member";
 import LegalOfficer from "./components/LegalOfficer";
 import Contact from "./components/Contact";
 import { MenuItem } from "./components/Menu";
+import Announcement from "./components/Announcement";
+import ExternalLink from "./components/ExternalLink";
 
 // Global
 export const CONTACT_EMAIL: string = "info@logion.network";
@@ -37,6 +39,9 @@ export const MENU: MenuItem[] = [
 
 // Content
 export const CONTENT: ReactNode = (<>
+    <Announcement>
+        <ExternalLink href="https://medium.com/@logion/supporting-logion-in-the-upcoming-polkadot-crowdloan-sept-30th-c6d41d83ffca">Support Logion in its Crowdloan!</ExternalLink>
+    </Announcement>
     <Banner
         firstText={<>
             { /* START EDIT */ }
