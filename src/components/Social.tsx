@@ -1,6 +1,6 @@
-import { Linkedin, Twitter, Discord, Github, Medium } from 'react-bootstrap-icons';
+import { Linkedin, Twitter, Discord, Github, Medium, Telegram } from 'react-bootstrap-icons';
 import ExternalLink from './ExternalLink';
-import { DISCORD_URL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, TWITTER_URL } from '../Content';
+import { DISCORD_URL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, TELEGRAM_URL, TWITTER_URL } from '../Content';
 import "./Social.css";
 
 export interface Props {
@@ -41,6 +41,17 @@ export default function Social(props: Props) {
                     href={ DISCORD_URL }
                 >
                     <Discord
+                        color={ props.color }
+                        size={ props.iconSize }
+                    />
+                </ExternalLink>
+            }
+            {
+                TELEGRAM_URL !== undefined &&
+                <ExternalLink
+                    href={ TELEGRAM_URL }
+                >
+                    <Telegram
                         color={ props.color }
                         size={ props.iconSize }
                     />
