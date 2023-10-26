@@ -40,7 +40,7 @@ export const MENU: MenuItem[] = [
 // Content
 export const CONTENT: ReactNode = (<>
     <Announcement>
-        <ExternalLink href="https://medium.com/@logion/supporting-logion-in-the-upcoming-polkadot-crowdloan-sept-30th-c6d41d83ffca">Support Logion in its Crowdloan!</ExternalLink>
+        <ExternalLink href="https://medium.com/logion/supporting-logion-id-3354-in-the-polkadot-crowdloan-auctions-53-59-66a17da9b899">Support Logion in its Crowdloan!</ExternalLink>
     </Announcement>
     <Banner
         firstText={<>
