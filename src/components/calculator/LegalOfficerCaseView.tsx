@@ -1,7 +1,7 @@
 import { Button, Form } from "react-bootstrap";
 import { useCalculatorContext } from "./CalculatorContext";
 import AmountInputGroup from "./AmountInputGroup";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import LocFees from "./LocFees";
 import CollectionFields from "./CollectionFields";
 import LocFiles from "./LocFiles";
@@ -11,6 +11,7 @@ import Title3 from "./Title3";
 
 export interface Props {
     index: number;
+    removeActiveKey: () => void;
 }
 
 export default function LegalOfficerCaseView(props: Props) {
@@ -25,6 +26,11 @@ export default function LegalOfficerCaseView(props: Props) {
             return (value: bigint) => updateLocCost(props.index, "legalFee", value);
         }
     }, [ loc.parameters.locType, updateLocCost, props.index ]);
+
+    const onRemove = useCallback(() => {
+        props.removeActiveKey();
+        removeLocCost(props.index);
+    }, [ props, removeLocCost ]);
 
     return (
         <div className="LegalOfficerCaseView">
@@ -81,7 +87,7 @@ export default function LegalOfficerCaseView(props: Props) {
                 fees={ loc.fees }
                 showCollectionFees={ loc.parameters.locType === "Collection" }
             />
-            <Button onClick={ () => removeLocCost(props.index) } variant="danger">Remove LOC</Button>
+            <Button onClick={ onRemove } variant="danger">Remove LOC</Button>
         </div>
     );
 }
