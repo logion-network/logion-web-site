@@ -1,4 +1,4 @@
-import { Currency, Fees, Hash, LocType, LogionNodeApiClass, Numbers, UUID, buildApiClass } from "@logion/node-api";
+import { Currency, Fees, Hash, LocType, LogionNodeApiClass, Numbers, UUID } from "@logion/node-api";
 
 export interface LegalOfficerCaseCostParameters {
     readonly description: string;
@@ -86,6 +86,11 @@ export interface CollectionFees {
     readonly tokensRecordFee: bigint;
 }
 
+export interface ConnectionParameters {
+    api: LogionNodeApiClass;
+    origin: string;
+}
+
 export class LegalOfficerCaseCost {
 
     static defaultIdentityLocCost(): LegalOfficerCaseCost {
@@ -160,9 +165,8 @@ export class LegalOfficerCaseCost {
 
     private _collectionFees: CollectionFees;
 
-    async computeFees(lgntEuroRate: number) {
-        const api = await buildApiClass("wss://dev-rpc01.logion.network");
-        const origin = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
+    async computeFees(connection: ConnectionParameters, lgntEuroRate: number) {
+        const { api, origin } = connection;
 
         const metadataInclusionFees = await api.fees.estimateWithoutStorage({
             origin,

@@ -50,8 +50,7 @@ export default function LegalOfficerCaseView(props: Props) {
                 <AmountInputGroup
                     amount={ loc.parameters.legalFee }
                     onChange={ onChangeLegalFee }
-                    readOnly={ loc.parameters.locType === "Identity" }
-                    disabled={ updating }
+                    disabled={ loc.parameters.locType === "Identity" }
                 />
             </Form.Group>
             <Form.Group controlId="metadata">

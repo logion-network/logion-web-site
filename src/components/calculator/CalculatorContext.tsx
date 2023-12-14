@@ -1,6 +1,9 @@
 import { createContext, Context, useContext, useReducer, ReactNode, useCallback, useEffect } from 'react';
-import { DEFAULT_LGNT_EURO_RATE, LegalOfficerCaseCost, LegalOfficerCaseCostParameters } from './LegalOfficerCaseCost';
-import { Fees } from '@logion/node-api';
+import { ConnectionParameters, DEFAULT_LGNT_EURO_RATE, LegalOfficerCaseCost, LegalOfficerCaseCostParameters } from './LegalOfficerCaseCost';
+import { Fees, buildApiClass } from '@logion/node-api';
+
+const ENDPOINTS = ["wss://rpc01.logion.network", "wss://rpc02.logion.network"];
+const ORIGIN = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
 
 export interface CalculatorContextState {
     locs: LegalOfficerCaseCost[];
@@ -11,6 +14,7 @@ export interface CalculatorContextState {
     updating: boolean;
     lgntEuroRate: number;
     setLgntEuroRate: (lgntEuroRate: number) => void;
+    connection?: ConnectionParameters;
 }
 
 type ActionType = "SET_ADD_LOC_COST"
@@ -22,6 +26,7 @@ type ActionType = "SET_ADD_LOC_COST"
     | "SET_UPDATING"
     | "SET_LGNT_EURO_RATE"
     | "SET_SET_LGNT_EURO_RATE"
+    | "CONNECT"
 ;
 
 interface Action {
@@ -35,6 +40,7 @@ interface Action {
     lgntEuroRate?: number;
     setLgntEuroRate?: (lgntEuroRate: number) => void;
     locs?: LegalOfficerCaseCost[];
+    connection?: ConnectionParameters;
 }
 
 function reducer(state: CalculatorContextState, action: Action): CalculatorContextState {
@@ -98,6 +104,11 @@ function reducer(state: CalculatorContextState, action: Action): CalculatorConte
             lgntEuroRate: action.lgntEuroRate!,
             ...costsState(action.locs!),
         };
+    } else if(action.type === "CONNECT") {
+        return {
+            ...state,
+            connection: action.connection!,
+        };
     } else {
         throw new Error(`Unsupported action type ${ action.type }`);
     }
@@ -128,24 +139,42 @@ export interface Props {
     children: ReactNode;
 }
 
+let connecting = false;
+
 export default function CalculatorContextProvider(props: Props) {
     const [ state, dispatch ] = useReducer(reducer, INITIAL_STATE);
 
+    useEffect(() => {
+        if(!connecting) {
+            connecting = true;
+            (async function() {
+                const api = await buildApiClass(ENDPOINTS);
+                const origin = ORIGIN;
+                dispatch({
+                    type: "CONNECT",
+                    connection: { api, origin },
+                })
+            })();
+        }
+    }, []);
+
     const addLocCost = useCallback(async (newCost: LegalOfficerCaseCost) => {
-        dispatch({
-            type: "SET_UPDATING",
-            updating: true,
-        });
-        await newCost.computeFees(state.lgntEuroRate);
-        dispatch({
-            type: 'ADD_LOC_COST',
-            newCost,
-        });
-        dispatch({
-            type: "SET_UPDATING",
-            updating: false,
-        });
-    }, [ state.lgntEuroRate ]);
+        if(state.connection) {
+            dispatch({
+                type: "SET_UPDATING",
+                updating: true,
+            });
+            await newCost.computeFees(state.connection, state.lgntEuroRate);
+            dispatch({
+                type: 'ADD_LOC_COST',
+                newCost,
+            });
+            dispatch({
+                type: "SET_UPDATING",
+                updating: false,
+            });
+        }
+    }, [ state.connection, state.lgntEuroRate ]);
 
     useEffect(() => {
         if(addLocCost !== state.addLocCost) {
@@ -173,40 +202,42 @@ export default function CalculatorContextProvider(props: Props) {
     }, [ state, removeLocCost ]);
 
     const updateLocCost = useCallback(async (index: number, key: keyof LegalOfficerCaseCostParameters, value: unknown, computeFees?: boolean) => {
-        const withFees = computeFees === undefined || computeFees;
-        let newCost: LegalOfficerCaseCost;
-        try {
-            if(withFees) {
-                dispatch({
-                    type: "SET_UPDATING",
-                    updating: true,
-                });
+        if(state.connection) {
+            const withFees = computeFees === undefined || computeFees;
+            let newCost: LegalOfficerCaseCost;
+            try {
+                if(withFees) {
+                    dispatch({
+                        type: "SET_UPDATING",
+                        updating: true,
+                    });
 
-                newCost = new LegalOfficerCaseCost({
-                    ...state.locs[index].parameters,
-                    [key]: value,
-                });
-                await newCost.computeFees(state.lgntEuroRate);
-            } else {
-                newCost = new LegalOfficerCaseCost({
-                    ...state.locs[index].parameters,
-                    [key]: value,
-                }, state.locs[index].fees, state.locs[index].collectionFees);
-            }
-            dispatch({
-                type: 'UPDATE_LOC_COST',
-                index,
-                newCost,
-            });
-        } finally {
-            if(withFees) {
+                    newCost = new LegalOfficerCaseCost({
+                        ...state.locs[index].parameters,
+                        [key]: value,
+                    });
+                    await newCost.computeFees(state.connection, state.lgntEuroRate);
+                } else {
+                    newCost = new LegalOfficerCaseCost({
+                        ...state.locs[index].parameters,
+                        [key]: value,
+                    }, state.locs[index].fees, state.locs[index].collectionFees);
+                }
                 dispatch({
-                    type: "SET_UPDATING",
-                    updating: false,
+                    type: 'UPDATE_LOC_COST',
+                    index,
+                    newCost,
                 });
+            } finally {
+                if(withFees) {
+                    dispatch({
+                        type: "SET_UPDATING",
+                        updating: false,
+                    });
+                }
             }
         }
-    }, [ state.locs, state.lgntEuroRate ]);
+    }, [ state.connection, state.locs, state.lgntEuroRate ]);
 
     useEffect(() => {
         if(updateLocCost !== state.updateLocCost) {
@@ -218,29 +249,31 @@ export default function CalculatorContextProvider(props: Props) {
     }, [ state, updateLocCost ]);
 
     const setLgntEuroRate = useCallback(async (lgntEuroRate: number) => {
-        dispatch({
-            type: "SET_UPDATING",
-            updating: true,
-        });
-        try {
-            const locs = [ ...state.locs ];
-            for(const cost of locs) {
-                if(cost.parameters.locType === "Collection") {
-                    await cost.computeFees(lgntEuroRate);
-                }
-            }
-            dispatch({
-                type: 'SET_LGNT_EURO_RATE',
-                lgntEuroRate,
-                locs,
-            });
-        } finally {
+        if(state.connection) {
             dispatch({
                 type: "SET_UPDATING",
-                updating: false,
+                updating: true,
             });
+            try {
+                const locs = [ ...state.locs ];
+                for(const cost of locs) {
+                    if(cost.parameters.locType === "Collection") {
+                        await cost.computeFees(state.connection, lgntEuroRate);
+                    }
+                }
+                dispatch({
+                    type: 'SET_LGNT_EURO_RATE',
+                    lgntEuroRate,
+                    locs,
+                });
+            } finally {
+                dispatch({
+                    type: "SET_UPDATING",
+                    updating: false,
+                });
+            }
         }
-    }, [ state.locs ]);
+    }, [ state.connection, state.locs ]);
 
     useEffect(() => {
         if(setLgntEuroRate !== state.setLgntEuroRate) {

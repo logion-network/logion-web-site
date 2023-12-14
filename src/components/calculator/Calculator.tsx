@@ -1,4 +1,4 @@
-import { Accordion, Form, InputGroup } from "react-bootstrap";
+import { Accordion, Form, InputGroup, Spinner } from "react-bootstrap";
 import { useCalculatorContext } from "./CalculatorContext";
 import LegalOfficerCaseView from "./LegalOfficerCaseView";
 import AddLocButtons from "./AddLocButtons";
@@ -10,18 +10,28 @@ import LayoutControl from "./LayoutControl";
 import { LegalOfficerCaseCost } from "./LegalOfficerCaseCost";
 import DebounceFormControl from "./DebounceFormControl";
 import "./Calculator.css";
+import Center from "../Center";
 
 function locTitle(index: number, loc: LegalOfficerCaseCost) {
     return `LOC #${ index + 1 } - ${ loc.parameters.description }`;
 }
 
 export default function Calculator() {
-    const { locs, total, lgntEuroRate, setLgntEuroRate, updating } = useCalculatorContext();
+    const { locs, total, lgntEuroRate, setLgntEuroRate, updating, connection } = useCalculatorContext();
     const [ activeKey, setActiveKey ] = useState<string[]>([]);
 
     const allAccodionKeys = useMemo(() => {
         return locs.map((_, index) => index.toString());
     }, [ locs ]);
+
+    if(!connection) {
+        return (
+            <Center>
+                <Spinner/>
+                <p>Connecting to Logion...</p>
+            </Center>
+        );
+    }
 
     return (
         <div className="Calculator">
