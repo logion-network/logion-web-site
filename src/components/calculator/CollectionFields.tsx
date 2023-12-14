@@ -1,11 +1,13 @@
-import { Form, InputGroup } from "react-bootstrap";
-import { LegalOfficerCaseCost } from "./LegalOfficerCaseCost";
-import DebounceFormControl from "./DebounceFormControl";
+import { Button } from "react-bootstrap";
+import { DEFAULT_CUSTOM_COLLECTION_COST_PARAMETERS, DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS, LegalOfficerCaseCost } from "./LegalOfficerCaseCost";
 import Title3 from "./Title3";
 import CollectionItems from "./CollectionItems";
-import { useCalculatorContext } from "./CalculatorContext";
-import AmountInputGroup from "./AmountInputGroup";
 import TokensRecords from "./TokensRecords";
+import "./CollectionFields.css";
+import StandardCollectionCostParametersView from "./StandardCollectionCostParametersView";
+import { useCalculatorContext } from "./CalculatorContext";
+import { useCallback } from "react";
+import CustomCollectionCostParametersView from "./CustomCollectionCostParametersView";
 
 export interface Props {
     index: number;
@@ -13,45 +15,47 @@ export interface Props {
 }
 
 export default function CollectionFields(props: Props) {
-    const { updateLocCost, updating } = useCalculatorContext();
+    const { updateLocCost } = useCalculatorContext();
+
+    const switchToCustom = useCallback(() => {
+        updateLocCost(props.index, "collectionCostParameters", DEFAULT_CUSTOM_COLLECTION_COST_PARAMETERS);
+    }, [ props.index, updateLocCost ]);
+
+    const switchToStandard = useCallback(() => {
+        updateLocCost(props.index, "collectionCostParameters", DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS);
+    }, [ props.index, updateLocCost ]);
 
     return (
         <div className="CollectionFields">
             <Title3>Collection</Title3>
 
-            <Form.Group controlId="protectedValue">
-                <Form.Label>Protected value</Form.Label>
-                <InputGroup>
-                    <DebounceFormControl
-                        value={ props.loc.parameters.protectedValue.toString() }
-                        onChange={ value => updateLocCost(props.index, "protectedValue", BigInt(value)) }
-                        disabled={ updating }
-                        type="number"
-                    />
-                    <InputGroup.Text>€</InputGroup.Text>
-                </InputGroup>
-            </Form.Group>
-            <Form.Group controlId="fee">
-                <Form.Label>Value fee</Form.Label>
-                <AmountInputGroup
-                    amount={ props.loc.collectionFees.valueFee }
-                    disabled={ true }
-                />
-            </Form.Group>
-            <Form.Group controlId="collectionItemFee">
-                <Form.Label>Collection item fee</Form.Label>
-                <AmountInputGroup
-                    amount={ props.loc.collectionFees.collectionItemFee }
-                    disabled={ true }
-                />
-            </Form.Group>
-            <Form.Group controlId="tokensRecordFee">
-                <Form.Label>Tokens record fee</Form.Label>
-                <AmountInputGroup
-                    amount={ props.loc.collectionFees.tokensRecordFee }
-                    disabled={ true }
-                />
-            </Form.Group>
+            <p>You have the possibility to either 1) apply standard collection fees which are function
+                of the protected value (expressed in euros) or 2) apply custom collection fees.
+            </p>
+
+            <p><strong>If you use
+                custom collection fees, they should have been negotiated first with a Legal Officer,
+                otherwise, the LOC may be rejected.</strong></p>
+
+            <div className="cost-parameters">
+            {
+                !props.loc.parameters.collectionCostParameters.custom &&
+                <StandardCollectionCostParametersView { ...props } />
+            }
+            {
+                props.loc.parameters.collectionCostParameters.custom &&
+                <CustomCollectionCostParametersView { ...props } />
+            }
+            </div>
+
+            {
+                !props.loc.parameters.collectionCostParameters.custom &&
+                <Button onClick={ switchToCustom }>I will negotiate custom collection fees</Button>
+            }
+            {
+                props.loc.parameters.collectionCostParameters.custom &&
+                <Button onClick={ switchToStandard }>I will use standard collection fees</Button>
+            }
 
             <CollectionItems
                 index={ props.index }

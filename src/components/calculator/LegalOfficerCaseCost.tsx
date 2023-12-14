@@ -6,11 +6,43 @@ export interface LegalOfficerCaseCostParameters {
     readonly locType: LocType;
     readonly metadata: number;
     readonly links: number;
-    readonly protectedValue: bigint;
+    readonly collectionCostParameters: CollectionCostParameters;
     readonly files: LocFileCostParameters[];
     readonly items: CollectionItemCostParameters[];
     readonly records: TokensRecordCostParameters[];
 }
+
+export interface CollectionCostParameters {
+    readonly custom: boolean;
+    readonly protectedValue: bigint;
+    readonly customValueFee: bigint;
+    readonly customCollectionItemFee: bigint;
+    readonly customTokensRecordFee: bigint;
+}
+
+export const ZERO_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
+    custom: false,
+    protectedValue: 0n,
+    customValueFee: 0n,
+    customCollectionItemFee: 0n,
+    customTokensRecordFee: 0n,
+};
+
+export const DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
+    custom: false,
+    protectedValue: 2500000n,
+    customValueFee: 0n,
+    customCollectionItemFee: 0n,
+    customTokensRecordFee: 0n,
+};
+
+export const DEFAULT_CUSTOM_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
+    custom: true,
+    protectedValue: 0n,
+    customValueFee: Currency.toCanonicalAmount(Currency.nLgnt(3000n)),
+    customCollectionItemFee: Currency.toCanonicalAmount(Currency.nLgnt(1500n)),
+    customTokensRecordFee: Currency.toCanonicalAmount(Currency.nLgnt(1500n)),
+};
 
 export interface LocFileCostParameters {
     readonly description: string;
@@ -59,7 +91,7 @@ export class LegalOfficerCaseCost {
             locType: "Identity",
             metadata: 1,
             links: 1,
-            protectedValue: 0n,
+            collectionCostParameters: ZERO_COLLECTION_COST_PARAMETERS,
             files: [ DEFAULT_FILE ],
             items: [],
             records: [],
@@ -73,7 +105,7 @@ export class LegalOfficerCaseCost {
             locType: "Transaction",
             metadata: 1,
             links: 1,
-            protectedValue: 0n,
+            collectionCostParameters: ZERO_COLLECTION_COST_PARAMETERS,
             files: [ DEFAULT_FILE ],
             items: [],
             records: [],
@@ -87,7 +119,7 @@ export class LegalOfficerCaseCost {
             locType: "Collection",
             metadata: 1,
             links: 1,
-            protectedValue: 2500000n,
+            collectionCostParameters: DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS,
             files: [ DEFAULT_FILE ],
             items: [ DEFAULT_ITEM ],
             records: [ DEFAULT_RECORD ],
@@ -166,7 +198,7 @@ export class LegalOfficerCaseCost {
 
         const valueFees = new Fees({
             inclusionFee: 0n,
-            valueFee: this.valueFee(this.parameters.protectedValue),
+            valueFee: this._collectionFees.valueFee,
         });
 
         this._fees = LegalOfficerCaseCost.addFees(
@@ -301,10 +333,18 @@ export class LegalOfficerCaseCost {
     }
 
     private computeCollectionFees(): CollectionFees {
-        const valueFee = this.valueFee(this.parameters.protectedValue);
-        const collectionItemFee = BigInt(Math.ceil(Number(valueFee) / 2));
-        const tokensRecordFee = collectionItemFee;
-        return { valueFee, collectionItemFee, tokensRecordFee };
+        if(this.parameters.collectionCostParameters.custom) {
+            return {
+                valueFee: this.parameters.collectionCostParameters.customValueFee,
+                collectionItemFee: this.parameters.collectionCostParameters.customCollectionItemFee,
+                tokensRecordFee: this.parameters.collectionCostParameters.customTokensRecordFee,
+            };
+        } else {
+            const valueFee = this.valueFee(this.parameters.collectionCostParameters.protectedValue);
+            const collectionItemFee = BigInt(Math.ceil(Number(valueFee) / 2));
+            const tokensRecordFee = collectionItemFee;
+            return { valueFee, collectionItemFee, tokensRecordFee };
+        }
     }
 
     private valueFee(protectedValue: bigint) {
