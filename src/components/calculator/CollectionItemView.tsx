@@ -31,10 +31,22 @@ export default function CollectionItemView(props: Props) {
 
     return (
         <div className="CollectionItemView">
-            <h4>Collection Item #{ props.itemIndex + 1 }</h4>
+            <h4>Collection item group #{ props.itemIndex + 1 }</h4>
 
+            <Form.Group controlId="items">
+                <Form.Label>Number of items</Form.Label>
+                <DebounceFormControl
+                    value={ props.item.items.toString() }
+                    onChange={ value => replaceItem({
+                        ...props.item,
+                        items: BigInt(value),
+                    })}
+                    disabled={ updating }
+                    type="number"
+                />
+            </Form.Group>
             <Form.Group controlId="size">
-                <Form.Label>Total file size</Form.Label>
+                <Form.Label>Total file size per item</Form.Label>
                 <InputGroup>
                     <DebounceFormControl
                         value={ props.item.totalFileSize.toString() }
@@ -49,7 +61,7 @@ export default function CollectionItemView(props: Props) {
                 </InputGroup>
             </Form.Group>
             <Form.Group controlId="supply">
-                <Form.Label>Token supply</Form.Label>
+                <Form.Label>Token supply per item</Form.Label>
                 <DebounceFormControl
                     value={ props.item.tokenSupply.toString() }
                     onChange={ value => replaceItem({
@@ -61,7 +73,7 @@ export default function CollectionItemView(props: Props) {
                 />
             </Form.Group>
 
-            <Button onClick={ removeItem } variant="danger">Remove item</Button>
+            <Button onClick={ removeItem } variant="danger">Remove item group</Button>
         </div>
     );
 }

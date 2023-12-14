@@ -57,20 +57,24 @@ export const DEFAULT_FILE: LocFileCostParameters = {
 };
 
 export interface CollectionItemCostParameters {
+    items: bigint;
     totalFileSize: bigint;
     tokenSupply: bigint;
 }
 
 export const DEFAULT_ITEM: CollectionItemCostParameters = {
+    items: 20n,
     tokenSupply: 1n,
     totalFileSize: DEFAULT_FILE_SIZE,
 };
 
 export interface TokensRecordCostParameters {
+    records: bigint;
     totalFileSize: bigint;
 }
 
 export const DEFAULT_RECORD: TokensRecordCostParameters = {
+    records: 5n,
     totalFileSize: DEFAULT_FILE_SIZE,
 };
 
@@ -368,31 +372,33 @@ export class LegalOfficerCaseCost {
     private async itemsFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
         let total = new Fees({ inclusionFee: 0n });
         for(const item of this.parameters.items) {
-            const submittable = api.polkadot.tx.logionLoc.addCollectionItem(
-                api.adapters.toLocId(new UUID()),
-                api.adapters.toH256(Hash.of("")),
-                api.adapters.toH256(Hash.of("")),
-                [
-                    api.adapters.toCollectionItemFile({
-                        contentType: Hash.of("text/plain"),
-                        hash: Hash.of(""),
-                        name: Hash.of(""),
-                        size: item.totalFileSize,
-                    })
-                ],
-                null,
-                true,
-                [],
-            );
-            const itemFees = await api.fees.estimateAddCollectionItem({
-                origin,
-                collectionItemFee: this._collectionFees.collectionItemFee,
-                numOfEntries: 1n,
-                submittable,
-                tokenIssuance: item.tokenSupply,
-                totSize: item.totalFileSize,
-            });
-            total = LegalOfficerCaseCost.addFees(total, itemFees);
+            for(let i = 0; i < item.items; ++i) {
+                const submittable = api.polkadot.tx.logionLoc.addCollectionItem(
+                    api.adapters.toLocId(new UUID()),
+                    api.adapters.toH256(Hash.of("")),
+                    api.adapters.toH256(Hash.of("")),
+                    [
+                        api.adapters.toCollectionItemFile({
+                            contentType: Hash.of("text/plain"),
+                            hash: Hash.of(""),
+                            name: Hash.of(""),
+                            size: item.totalFileSize,
+                        })
+                    ],
+                    null,
+                    true,
+                    [],
+                );
+                const itemFees = await api.fees.estimateAddCollectionItem({
+                    origin,
+                    collectionItemFee: this._collectionFees.collectionItemFee,
+                    numOfEntries: 1n,
+                    submittable,
+                    tokenIssuance: item.tokenSupply,
+                    totSize: item.totalFileSize,
+                });
+                total = LegalOfficerCaseCost.addFees(total, itemFees);
+            }
         }
         return total;
     }
@@ -400,27 +406,29 @@ export class LegalOfficerCaseCost {
     private async recordsFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
         let total = new Fees({ inclusionFee: 0n });
         for(const record of this.parameters.records) {
-            const submittable = api.polkadot.tx.logionLoc.addTokensRecord(
-                api.adapters.toLocId(new UUID()),
-                api.adapters.toH256(Hash.of("")),
-                api.adapters.toH256(Hash.of("")),
-                [
-                    api.adapters.toCollectionItemFile({
-                        contentType: Hash.of("text/plain"),
-                        hash: Hash.of(""),
-                        name: Hash.of(""),
-                        size: record.totalFileSize,
-                    })
-                ],
-            );
-            const recordFees = await api.fees.estimateAddTokensRecord({
-                origin,
-                tokensRecordFee: this._collectionFees.tokensRecordFee,
-                numOfEntries: 1n,
-                submittable,
-                totSize: record.totalFileSize,
-            });
-            total = LegalOfficerCaseCost.addFees(total, recordFees);
+            for(let i = 0; i < record.records; ++i) {
+                const submittable = api.polkadot.tx.logionLoc.addTokensRecord(
+                    api.adapters.toLocId(new UUID()),
+                    api.adapters.toH256(Hash.of("")),
+                    api.adapters.toH256(Hash.of("")),
+                    [
+                        api.adapters.toCollectionItemFile({
+                            contentType: Hash.of("text/plain"),
+                            hash: Hash.of(""),
+                            name: Hash.of(""),
+                            size: record.totalFileSize,
+                        })
+                    ],
+                );
+                const recordFees = await api.fees.estimateAddTokensRecord({
+                    origin,
+                    tokensRecordFee: this._collectionFees.tokensRecordFee,
+                    numOfEntries: 1n,
+                    submittable,
+                    totSize: record.totalFileSize,
+                });
+                total = LegalOfficerCaseCost.addFees(total, recordFees);
+            }
         }
         return total;
     }

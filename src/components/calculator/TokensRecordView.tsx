@@ -31,10 +31,22 @@ export default function TokensRecordView(props: Props) {
 
     return (
         <div className="TokensRecordView">
-            <h4>Tokens record #{ props.itemIndex + 1 }</h4>
+            <h4>Tokens record group #{ props.itemIndex + 1 }</h4>
 
+            <Form.Group controlId="items">
+                <Form.Label>Number of records</Form.Label>
+                <DebounceFormControl
+                    value={ props.record.records.toString() }
+                    onChange={ value => replaceItem({
+                        ...props.record,
+                        records: BigInt(value),
+                    })}
+                    disabled={ updating }
+                    type="number"
+                />
+            </Form.Group>
             <Form.Group controlId="size">
-                <Form.Label>Total file size</Form.Label>
+                <Form.Label>Total file size per record</Form.Label>
                 <InputGroup>
                     <DebounceFormControl
                         value={ props.record.totalFileSize.toString() }
@@ -49,7 +61,7 @@ export default function TokensRecordView(props: Props) {
                 </InputGroup>
             </Form.Group>
 
-            <Button onClick={ removeRecord } variant="danger">Remove record</Button>
+            <Button onClick={ removeRecord } variant="danger">Remove record group</Button>
         </div>
     );
 }
