@@ -7,6 +7,12 @@ import LocFees from "./LocFees";
 import Title2 from "./Title2";
 import { useMemo, useState } from "react";
 import LayoutControl from "./LayoutControl";
+import "./Calculator.css";
+import { LegalOfficerCaseCost } from "./LegalOfficerCaseCost";
+
+function locTitle(index: number, loc: LegalOfficerCaseCost) {
+    return `LOC #${ index + 1 } - ${ loc.parameters.description }`;
+}
 
 export default function Calculator() {
     const { locs, total, euroTotal } = useCalculatorContext();
@@ -27,11 +33,12 @@ export default function Calculator() {
             >
                 { locs.map((loc, index) => (
                     <Accordion.Item eventKey={ index.toString() }>
-                        <Accordion.Header>LOC #{ index + 1 } - { loc.parameters.description }</Accordion.Header>
+                        <Accordion.Header>{ locTitle(index, loc) }</Accordion.Header>
                         <Accordion.Body>
                             <LegalOfficerCaseView
                                 key={ index }
                                 index={ index }
+                                title={ locTitle(index, loc) }
                                 removeActiveKey={ () => setActiveKey(activeKey.filter(key => key !== index.toString())) }
                             />
                         </Accordion.Body>

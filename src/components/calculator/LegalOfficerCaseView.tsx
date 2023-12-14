@@ -12,6 +12,7 @@ import Title3 from "./Title3";
 export interface Props {
     index: number;
     removeActiveKey: () => void;
+    title: string;
 }
 
 export default function LegalOfficerCaseView(props: Props) {
@@ -34,7 +35,7 @@ export default function LegalOfficerCaseView(props: Props) {
 
     return (
         <div className="LegalOfficerCaseView">
-            <Title2>LOC #{ props.index + 1 }</Title2>
+            <Title2 hide>{ props.title }</Title2>
 
             <Form.Group controlId="description">
                 <Form.Label>Description</Form.Label>

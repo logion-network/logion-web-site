@@ -38,3 +38,9 @@
 .Footer .legal p:last-child {
     margin-bottom: 0;
 }
+
+@media print {
+    .Footer {
+        display: none;
+    }
+}

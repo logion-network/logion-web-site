@@ -1,0 +1,10 @@
+@media print {
+    .Calculator .btn {
+        display: none;
+    }
+
+    .Calculator .accordion-button {
+        font-size: 1.7rem;
+        color: var(--color1-color);
+    }
+}
