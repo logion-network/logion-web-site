@@ -16,9 +16,6 @@ export default function CostCalculatorPage() {
                     Legal Officer, an Identity LOC is required. Do not forget to include
                     it in your estimation if you do not have one already.</p>
 
-                <p>In below conversions between EUR and LGNT, a rate of 20 LGNT = 1 EUR
-                    is applied.</p>
-
                 <CalculatorContextProvider>
                     <Calculator/>
                 </CalculatorContextProvider>

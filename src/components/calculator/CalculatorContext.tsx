@@ -1,5 +1,5 @@
 import { createContext, Context, useContext, useReducer, ReactNode, useCallback, useEffect } from 'react';
-import { LegalOfficerCaseCost, LegalOfficerCaseCostParameters } from './LegalOfficerCaseCost';
+import { DEFAULT_LGNT_EURO_RATE, LegalOfficerCaseCost, LegalOfficerCaseCostParameters } from './LegalOfficerCaseCost';
 import { Fees } from '@logion/node-api';
 
 export interface CalculatorContextState {
@@ -8,8 +8,9 @@ export interface CalculatorContextState {
     removeLocCost: (index: number) => void;
     updateLocCost: (index: number, key: keyof LegalOfficerCaseCostParameters, value: unknown, computeFees?: boolean) => Promise<void>;
     total: Fees;
-    euroTotal: number;
     updating: boolean;
+    lgntEuroRate: number;
+    setLgntEuroRate: (lgntEuroRate: number) => void;
 }
 
 type ActionType = "SET_ADD_LOC_COST"
@@ -19,6 +20,8 @@ type ActionType = "SET_ADD_LOC_COST"
     | "SET_UPDATE_LOC_COST"
     | "UPDATE_LOC_COST"
     | "SET_UPDATING"
+    | "SET_LGNT_EURO_RATE"
+    | "SET_SET_LGNT_EURO_RATE"
 ;
 
 interface Action {
@@ -29,6 +32,9 @@ interface Action {
     newCost?: LegalOfficerCaseCost;
     index?: number;
     updating?: boolean;
+    lgntEuroRate?: number;
+    setLgntEuroRate?: (lgntEuroRate: number) => void;
+    locs?: LegalOfficerCaseCost[];
 }
 
 function reducer(state: CalculatorContextState, action: Action): CalculatorContextState {
@@ -81,6 +87,17 @@ function reducer(state: CalculatorContextState, action: Action): CalculatorConte
             ...state,
             updating: action.updating!,
         };
+    } else if(action.type === "SET_SET_LGNT_EURO_RATE") {
+        return {
+            ...state,
+            setLgntEuroRate: action.setLgntEuroRate!,
+        };
+    } else if(action.type === "SET_LGNT_EURO_RATE") {
+        return {
+            ...state,
+            lgntEuroRate: action.lgntEuroRate!,
+            ...costsState(action.locs!),
+        };
     } else {
         throw new Error(`Unsupported action type ${ action.type }`);
     }
@@ -88,22 +105,21 @@ function reducer(state: CalculatorContextState, action: Action): CalculatorConte
 
 function costsState(locs: LegalOfficerCaseCost[]) {
     const total = locs.map(cost => cost.fees).reduce((prev, cur) => LegalOfficerCaseCost.addFees(prev, cur), new Fees({ inclusionFee: 0n }));
-    const euroTotal = LegalOfficerCaseCost.lgntToEuro(total.totalFee);
     return {
         locs,
         total,
-        euroTotal,
     };
 }
 
 const INITIAL_STATE: CalculatorContextState = {
     locs: [],
     total: new Fees({ inclusionFee: 0n }),
-    euroTotal: 0,
     addLocCost: () => { throw new Error("Not implemented yet") },
     removeLocCost: () => { throw new Error("Not implemented yet") },
     updateLocCost: () => { throw new Error("Not implemented yet") },
     updating: false,
+    lgntEuroRate: DEFAULT_LGNT_EURO_RATE,
+    setLgntEuroRate: () => { throw new Error("Not implemented yet") },
 };
 
 const CalculatorContext: Context<CalculatorContextState> = createContext<CalculatorContextState>(INITIAL_STATE);
@@ -120,7 +136,7 @@ export default function CalculatorContextProvider(props: Props) {
             type: "SET_UPDATING",
             updating: true,
         });
-        await newCost.computeFees();
+        await newCost.computeFees(state.lgntEuroRate);
         dispatch({
             type: 'ADD_LOC_COST',
             newCost,
@@ -129,7 +145,7 @@ export default function CalculatorContextProvider(props: Props) {
             type: "SET_UPDATING",
             updating: false,
         });
-    }, [  ]);
+    }, [ state.lgntEuroRate ]);
 
     useEffect(() => {
         if(addLocCost !== state.addLocCost) {
@@ -170,7 +186,7 @@ export default function CalculatorContextProvider(props: Props) {
                     ...state.locs[index].parameters,
                     [key]: value,
                 });
-                await newCost.computeFees();
+                await newCost.computeFees(state.lgntEuroRate);
             } else {
                 newCost = new LegalOfficerCaseCost({
                     ...state.locs[index].parameters,
@@ -190,7 +206,7 @@ export default function CalculatorContextProvider(props: Props) {
                 });
             }
         }
-    }, [ state.locs ]);
+    }, [ state.locs, state.lgntEuroRate ]);
 
     useEffect(() => {
         if(updateLocCost !== state.updateLocCost) {
@@ -200,6 +216,40 @@ export default function CalculatorContextProvider(props: Props) {
             })
         }
     }, [ state, updateLocCost ]);
+
+    const setLgntEuroRate = useCallback(async (lgntEuroRate: number) => {
+        dispatch({
+            type: "SET_UPDATING",
+            updating: true,
+        });
+        try {
+            const locs = [ ...state.locs ];
+            for(const cost of locs) {
+                if(cost.parameters.locType === "Collection") {
+                    await cost.computeFees(lgntEuroRate);
+                }
+            }
+            dispatch({
+                type: 'SET_LGNT_EURO_RATE',
+                lgntEuroRate,
+                locs,
+            });
+        } finally {
+            dispatch({
+                type: "SET_UPDATING",
+                updating: false,
+            });
+        }
+    }, [ state.locs ]);
+
+    useEffect(() => {
+        if(setLgntEuroRate !== state.setLgntEuroRate) {
+            dispatch({
+                type: "SET_SET_LGNT_EURO_RATE",
+                setLgntEuroRate,
+            })
+        }
+    }, [ state, setLgntEuroRate ]);
 
     return <CalculatorContext.Provider value={state}>
         { props.children }
