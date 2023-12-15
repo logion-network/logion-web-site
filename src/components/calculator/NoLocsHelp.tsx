@@ -1,5 +1,9 @@
+import Center from "../Center"
+
 export default function NoLocsHelp() {
     return (
-        <p>Add Legal Officer Cases (LOCs) below to match the requirements of your use-case.</p>
+        <Center>
+            <p><strong>Add the Legal Officer Cases (LOCs) you need for your use-case.</strong></p>
+        </Center>
     );
 }

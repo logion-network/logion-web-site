@@ -58,6 +58,7 @@ export default function LocFileView(props: Props) {
                     />
                     <InputGroup.Text>Bytes</InputGroup.Text>
                 </InputGroup>
+                <Form.Text muted>The size of the file, used to calculate the storage fee</Form.Text>
             </Form.Group>
 
             <Button onClick={ removeFile } variant="danger">Remove file</Button>

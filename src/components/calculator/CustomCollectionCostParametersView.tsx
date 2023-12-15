@@ -23,6 +23,7 @@ export default function CustomCollectionCostParametersView(props: Props) {
                     }) }
                     disabled={ updating }
                 />
+                <Form.Text muted>Fee linked to the protected value and collected on LOC closing</Form.Text>
             </Form.Group>
             <Form.Group controlId="collectionItemFee">
                 <Form.Label>Custom collection item fee</Form.Label>
@@ -34,6 +35,7 @@ export default function CustomCollectionCostParametersView(props: Props) {
                     }) }
                     disabled={ updating }
                 />
+                <Form.Text muted>Fee linked to the protected value and collected on each item addition</Form.Text>
             </Form.Group>
             <Form.Group controlId="tokensRecordFee">
                 <Form.Label>Custom tokens record fee</Form.Label>
@@ -45,6 +47,7 @@ export default function CustomCollectionCostParametersView(props: Props) {
                     }) }
                     disabled={ updating }
                 />
+                <Form.Text muted>Fee linked to the protected value and collected on each record addition</Form.Text>
             </Form.Group>
         </div>
     );

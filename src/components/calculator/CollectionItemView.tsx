@@ -44,6 +44,7 @@ export default function CollectionItemView(props: Props) {
                     disabled={ updating }
                     type="number"
                 />
+                <Form.Text muted>Number of items in this group</Form.Text>
             </Form.Group>
             <Form.Group controlId="size">
                 <Form.Label>Total file size per item</Form.Label>
@@ -59,6 +60,7 @@ export default function CollectionItemView(props: Props) {
                     />
                     <InputGroup.Text>Bytes</InputGroup.Text>
                 </InputGroup>
+                <Form.Text muted>The sum of the size of all the files of this group's items.</Form.Text>
             </Form.Group>
             <Form.Group controlId="supply">
                 <Form.Label>Token supply per item</Form.Label>
@@ -71,6 +73,7 @@ export default function CollectionItemView(props: Props) {
                     disabled={ updating }
                     type="number"
                 />
+                <Form.Text muted>If no token is attached to the items, set the value to zero; with NFT's, set the value to 1; with fungible tokens set the value to the supply of the token. This value impacts certificate fees.</Form.Text>
             </Form.Group>
 
             <Button onClick={ removeItem } variant="danger">Remove item group</Button>

@@ -28,6 +28,7 @@ export default function StandardCollectionCostParametersView(props: Props) {
                     />
                     <InputGroup.Text>€</InputGroup.Text>
                 </InputGroup>
+                <Form.Text muted>The value being protected expressed in euros</Form.Text>
             </Form.Group>
             <Form.Group controlId="fee">
                 <Form.Label>Value fee</Form.Label>
@@ -35,6 +36,7 @@ export default function StandardCollectionCostParametersView(props: Props) {
                     amount={ props.loc.collectionFees.valueFee }
                     disabled={ true }
                 />
+                <Form.Text muted>Fee linked to the protected value and collected on LOC closing</Form.Text>
             </Form.Group>
             <Form.Group controlId="collectionItemFee">
                 <Form.Label>Collection item fee</Form.Label>
@@ -42,6 +44,7 @@ export default function StandardCollectionCostParametersView(props: Props) {
                     amount={ props.loc.collectionFees.collectionItemFee }
                     disabled={ true }
                 />
+                <Form.Text muted>Fee linked to the protected value and collected on each item addition</Form.Text>
             </Form.Group>
             <Form.Group controlId="tokensRecordFee">
                 <Form.Label>Tokens record fee</Form.Label>
@@ -49,6 +52,7 @@ export default function StandardCollectionCostParametersView(props: Props) {
                     amount={ props.loc.collectionFees.tokensRecordFee }
                     disabled={ true }
                 />
+                <Form.Text muted>Fee linked to the protected value and collected on each record addition</Form.Text>
             </Form.Group>
         </div>
     );

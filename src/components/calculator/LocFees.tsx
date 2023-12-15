@@ -21,6 +21,7 @@ export default function LocFees(props: Props) {
                     amount={ props.fees.inclusionFee }
                     disabled={ true }
                 />
+                <Form.Text muted>Extrinsics handling fee</Form.Text>
             </Form.Group>
             <Form.Group controlId="inclusion">
                 <Form.Label>Legal fee</Form.Label>
@@ -28,6 +29,7 @@ export default function LocFees(props: Props) {
                     amount={ props.fees.legalFee }
                     disabled={ true }
                 />
+                <Form.Text muted>Legal Officer's fee</Form.Text>
             </Form.Group>
             <Form.Group controlId="storage">
                 <Form.Label>Storage fee</Form.Label>
@@ -35,6 +37,7 @@ export default function LocFees(props: Props) {
                     amount={ props.fees.storageFee }
                     disabled={ true }
                 />
+                <Form.Text muted>Files storage fee</Form.Text>
             </Form.Group>
             {
                 props.showCollectionFees &&
@@ -45,6 +48,7 @@ export default function LocFees(props: Props) {
                         amount={ props.fees.certificateFee }
                         disabled={ true }
                     />
+                    <Form.Text muted>Infrastructure fee linked to the availability of a certificate linked to an item; depends on token supply</Form.Text>
                 </Form.Group>
                 <Form.Group controlId="value">
                     <Form.Label>Value fee</Form.Label>
@@ -52,6 +56,7 @@ export default function LocFees(props: Props) {
                         amount={ props.fees.valueFee }
                         disabled={ true }
                     />
+                    <Form.Text muted>Fee linked to the protected value and collected on LOC closing</Form.Text>
                 </Form.Group>
                 <Form.Group controlId="collectionItem">
                     <Form.Label>Collection item fee</Form.Label>
@@ -59,6 +64,7 @@ export default function LocFees(props: Props) {
                         amount={ props.fees.collectionItemFee }
                         disabled={ true }
                     />
+                    <Form.Text muted>Fee linked to the protected value and collected on each item addition</Form.Text>
                 </Form.Group>
                 <Form.Group controlId="tokensRecord">
                     <Form.Label>Tokens record fee</Form.Label>
@@ -66,6 +72,7 @@ export default function LocFees(props: Props) {
                         amount={ props.fees.tokensRecordFee }
                         disabled={ true }
                     />
+                    <Form.Text muted>Fee linked to the protected value and collected on each record addition</Form.Text>
                 </Form.Group>
                 </>
             }

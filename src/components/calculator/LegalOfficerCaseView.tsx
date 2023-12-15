@@ -52,6 +52,7 @@ export default function LegalOfficerCaseView(props: Props) {
                     onChange={ onChangeLegalFee }
                     disabled={ loc.parameters.locType === "Identity" }
                 />
+                <Form.Text muted>Legal Officer's fee, may be discussed with the LO for Transaction and Collection LOCs; default value is 160 for Identity LOCs and 2000 for other types</Form.Text>
             </Form.Group>
             <Form.Group controlId="metadata">
                 <Form.Label>Number of public data items</Form.Label>

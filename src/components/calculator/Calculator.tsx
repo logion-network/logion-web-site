@@ -46,6 +46,7 @@ export default function Calculator() {
                     />
                     <InputGroup.Text>LGNT</InputGroup.Text>
                 </InputGroup>
+                <Form.Text muted>Number of LGNTs per euro, default is 20</Form.Text>
             </Form.Group>
             <Form.Group controlId="lgntValue">
                 <Form.Label>LGNT value</Form.Label>
@@ -60,8 +61,10 @@ export default function Calculator() {
                 </InputGroup>
             </Form.Group>
 
-            { locs.length === 0 && <NoLocsHelp /> }
-            { locs.length >= 1 && <LayoutControl allAccodionKeys={ allAccodionKeys } setActiveKey={ setActiveKey } /> }
+            <div className="top-bar">
+                { locs.length === 0 && <NoLocsHelp /> }
+                { locs.length >= 1 && <LayoutControl allAccodionKeys={ allAccodionKeys } setActiveKey={ setActiveKey } /> }
+            </div>
 
             <Accordion
                 alwaysOpen

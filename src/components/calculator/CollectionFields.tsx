@@ -33,9 +33,9 @@ export default function CollectionFields(props: Props) {
                 of the protected value (expressed in euros) or 2) apply custom collection fees.
             </p>
 
-            <p><strong>If you use
-                custom collection fees, they should have been negotiated first with a Legal Officer,
-                otherwise, the LOC may be rejected.</strong></p>
+            <p><strong>If you choose to use
+                custom collection fees, make sure they have been accepted first by the Legal Officer in charge,
+                otherwise your LOC may get rejected.</strong></p>
 
             <div className="cost-parameters">
             {

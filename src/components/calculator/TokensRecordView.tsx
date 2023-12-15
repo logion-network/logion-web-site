@@ -44,6 +44,7 @@ export default function TokensRecordView(props: Props) {
                     disabled={ updating }
                     type="number"
                 />
+                <Form.Text muted>Number of records in this group</Form.Text>
             </Form.Group>
             <Form.Group controlId="size">
                 <Form.Label>Total file size per record</Form.Label>
@@ -59,6 +60,7 @@ export default function TokensRecordView(props: Props) {
                     />
                     <InputGroup.Text>Bytes</InputGroup.Text>
                 </InputGroup>
+                <Form.Text muted>The sum of the size of all the files of this group's records.</Form.Text>
             </Form.Group>
 
             <Button onClick={ removeRecord } variant="danger">Remove record group</Button>
