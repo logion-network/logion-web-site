@@ -1,8 +1,8 @@
-import { Currency, Fees, Hash, LocType, LogionNodeApiClass, Numbers, UUID } from "@logion/node-api";
+import { Fees, Hash, Lgnt, LocType, LogionNodeApiClass, UUID } from "@logion/node-api";
 
 export interface LegalOfficerCaseCostParameters {
     readonly description: string;
-    readonly legalFee: bigint;
+    readonly legalFee: Lgnt;
     readonly locType: LocType;
     readonly metadata: number;
     readonly links: number;
@@ -15,33 +15,33 @@ export interface LegalOfficerCaseCostParameters {
 export interface CollectionCostParameters {
     readonly custom: boolean;
     readonly protectedValue: bigint;
-    readonly customValueFee: bigint;
-    readonly customCollectionItemFee: bigint;
-    readonly customTokensRecordFee: bigint;
+    readonly customValueFee: Lgnt;
+    readonly customCollectionItemFee: Lgnt;
+    readonly customTokensRecordFee: Lgnt;
 }
 
 export const ZERO_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
     custom: false,
     protectedValue: 0n,
-    customValueFee: 0n,
-    customCollectionItemFee: 0n,
-    customTokensRecordFee: 0n,
+    customValueFee: Lgnt.zero(),
+    customCollectionItemFee: Lgnt.zero(),
+    customTokensRecordFee: Lgnt.zero(),
 };
 
 export const DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
     custom: false,
     protectedValue: 2500000n,
-    customValueFee: 0n,
-    customCollectionItemFee: 0n,
-    customTokensRecordFee: 0n,
+    customValueFee: Lgnt.zero(),
+    customCollectionItemFee: Lgnt.zero(),
+    customTokensRecordFee: Lgnt.zero(),
 };
 
 export const DEFAULT_CUSTOM_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
     custom: true,
     protectedValue: 0n,
-    customValueFee: Currency.toCanonicalAmount(Currency.nLgnt(3000n)),
-    customCollectionItemFee: Currency.toCanonicalAmount(Currency.nLgnt(1500n)),
-    customTokensRecordFee: Currency.toCanonicalAmount(Currency.nLgnt(1500n)),
+    customValueFee: Lgnt.from(3000n),
+    customCollectionItemFee: Lgnt.from(1500n),
+    customTokensRecordFee: Lgnt.from(1500n),
 };
 
 export interface LocFileCostParameters {
@@ -81,9 +81,9 @@ export const DEFAULT_RECORD: TokensRecordCostParameters = {
 export const DEFAULT_LGNT_EURO_RATE = 20; // 20 LGNT = 1 EUR
 
 export interface CollectionFees {
-    readonly valueFee: bigint;
-    readonly collectionItemFee: bigint;
-    readonly tokensRecordFee: bigint;
+    readonly valueFee: Lgnt;
+    readonly collectionItemFee: Lgnt;
+    readonly tokensRecordFee: Lgnt;
 }
 
 export interface ConnectionParameters {
@@ -96,7 +96,7 @@ export class LegalOfficerCaseCost {
     static defaultIdentityLocCost(): LegalOfficerCaseCost {
         return new LegalOfficerCaseCost({
             description: "Identity LOC",
-            legalFee: Currency.toCanonicalAmount(Currency.nLgnt(160n)),
+            legalFee: Lgnt.from(160n),
             locType: "Identity",
             metadata: 1,
             links: 1,
@@ -110,7 +110,7 @@ export class LegalOfficerCaseCost {
     static defaultTransactionLocCost(): LegalOfficerCaseCost {
         return new LegalOfficerCaseCost({
             description: "Transaction LOC",
-            legalFee: Currency.toCanonicalAmount(Currency.nLgnt(2000n)),
+            legalFee: Lgnt.from(2000n),
             locType: "Transaction",
             metadata: 1,
             links: 1,
@@ -124,7 +124,7 @@ export class LegalOfficerCaseCost {
     static defaultCollectionLocCost(): LegalOfficerCaseCost {
         return new LegalOfficerCaseCost({
             description: "Collection LOC",
-            legalFee: Currency.toCanonicalAmount(Currency.nLgnt(2000n)),
+            legalFee: Lgnt.from(2000n),
             locType: "Collection",
             metadata: 1,
             links: 1,
@@ -141,12 +141,12 @@ export class LegalOfficerCaseCost {
             this._fees = fees;
             this._collectionFees = collectionFees;
         } else {
-            this._fees = new Fees({ inclusionFee: 0n });
+            this._fees = Fees.zero();
 
             this._collectionFees = {
-                valueFee: 0n,
-                collectionItemFee: 0n,
-                tokensRecordFee: 0n,
+                valueFee: Lgnt.zero(),
+                collectionItemFee: Lgnt.zero(),
+                tokensRecordFee: Lgnt.zero(),
             };
         }
     }
@@ -200,18 +200,18 @@ export class LegalOfficerCaseCost {
         const creationFees = await this.creationFees(api, origin);
 
         const legalFee = new Fees({
-            inclusionFee: 0n,
+            inclusionFee: Lgnt.zero(),
             legalFee: this.parameters.legalFee,
         });
 
         const valueFees = new Fees({
-            inclusionFee: 0n,
+            inclusionFee: Lgnt.zero(),
             valueFee: this._collectionFees.valueFee,
         });
 
-        this._fees = LegalOfficerCaseCost.addFees(
-            LegalOfficerCaseCost.multiplyFees(metadataInclusionFees, BigInt(this.parameters.metadata)),
-            LegalOfficerCaseCost.multiplyFees(linkInclusionFees, BigInt(this.parameters.links)),
+        this._fees = Fees.addAll(
+            metadataInclusionFees.multiply(BigInt(this.parameters.metadata)),
+            linkInclusionFees.multiply(BigInt(this.parameters.links)),
             fileFees,
             creationFees,
             legalFee,
@@ -222,7 +222,7 @@ export class LegalOfficerCaseCost {
     }
 
     private async filesFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
-        let total = new Fees({ inclusionFee: 0n });
+        let total = Fees.zero();
         for(const file of this.parameters.files) {
             const fileFees = await api.fees.estimateWithStorage({
                 origin,
@@ -237,7 +237,7 @@ export class LegalOfficerCaseCost {
                 ),
                 size: file.size,
             });
-            total = LegalOfficerCaseCost.addFees(total, fileFees);
+            total = total.add(fileFees);
         }
         return total;
     }
@@ -249,7 +249,7 @@ export class LegalOfficerCaseCost {
                 submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
                     api.adapters.toLocId(new UUID()),
                     origin,
-                    this.parameters.legalFee,
+                    this.parameters.legalFee.canonical,
                     api.adapters.toPalletLogionLocItemsParams({
                         metadata: [],
                         files: [],
@@ -263,7 +263,7 @@ export class LegalOfficerCaseCost {
                 submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
                     api.adapters.toLocId(new UUID()),
                     origin,
-                    this.parameters.legalFee,
+                    this.parameters.legalFee.canonical,
                     api.adapters.toPalletLogionLocItemsParams({
                         metadata: [],
                         files: [],
@@ -277,7 +277,7 @@ export class LegalOfficerCaseCost {
                 submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
                     api.adapters.toLocId(new UUID()),
                     origin,
-                    this.parameters.legalFee,
+                    this.parameters.legalFee.canonical,
                     api.adapters.toPalletLogionLocItemsParams({
                         metadata: [],
                         files: [],
@@ -290,56 +290,6 @@ export class LegalOfficerCaseCost {
         }
     }
 
-    // TODO move to node-api
-    static multiplyFees(fees: Fees, times: bigint): Fees {
-        return new Fees({
-            inclusionFee: this.multiplyFee(fees.inclusionFee, times)!,
-            certificateFee: this.multiplyFee(fees.certificateFee, times),
-            collectionItemFee: this.multiplyFee(fees.collectionItemFee, times),
-            legalFee: this.multiplyFee(fees.legalFee, times),
-            storageFee: this.multiplyFee(fees.storageFee, times),
-            tokensRecordFee: this.multiplyFee(fees.tokensRecordFee, times),
-            valueFee: this.multiplyFee(fees.valueFee, times),
-        });
-    }
-
-    private static multiplyFee(fee: bigint | undefined, times: bigint): bigint | undefined {
-        if(fee !== undefined) {
-            return fee * times;
-        } else {
-            return undefined;
-        }
-    }
-
-    // TODO move to node-api
-    static addFees(...terms: Fees[]): Fees {
-        let total = new Fees({ inclusionFee: 0n });
-        for(const fee of terms) {
-            total = new Fees({
-                inclusionFee: this.addFee(total.inclusionFee, fee.inclusionFee)!,
-                certificateFee: this.addFee(total.certificateFee, fee.certificateFee),
-                collectionItemFee: this.addFee(total.collectionItemFee, fee.collectionItemFee),
-                legalFee: this.addFee(total.legalFee, fee.legalFee),
-                storageFee: this.addFee(total.storageFee, fee.storageFee),
-                tokensRecordFee: this.addFee(total.tokensRecordFee, fee.tokensRecordFee),
-                valueFee: this.addFee(total.valueFee, fee.valueFee),
-            });
-        }
-        return total;
-    }
-
-    private static addFee(fee1: bigint | undefined, fee2: bigint | undefined): bigint | undefined {
-        if(fee1 !== undefined && fee2 !== undefined) {
-            return fee1 + fee2;
-        } else if(fee1 !== undefined && fee2 === undefined) {
-            return fee1;
-        } else if(fee1 === undefined && fee2 !== undefined) {
-            return fee2;
-        } else {
-            return undefined;
-        }
-    }
-
     private computeCollectionFees(lgntEuroRate: number): CollectionFees {
         if(this.parameters.collectionCostParameters.custom) {
             return {
@@ -349,32 +299,34 @@ export class LegalOfficerCaseCost {
             };
         } else {
             const valueFee = this.valueFee(this.parameters.collectionCostParameters.protectedValue, lgntEuroRate);
-            const collectionItemFee = BigInt(Math.ceil(Number(valueFee) / 2));
+            const collectionItemFee = valueFee.divide(2n);
             const tokensRecordFee = collectionItemFee;
             return { valueFee, collectionItemFee, tokensRecordFee };
         }
     }
 
     private valueFee(protectedValue: bigint, lgntEuroRate: number) {
+        let euroValueFee;
         if(protectedValue <= 50000n) {
-            return LegalOfficerCaseCost.euroToLgnt(Number(protectedValue) * 0.002, lgntEuroRate);
+            euroValueFee = Number(protectedValue) * 0.002;
         } else if(protectedValue > 50000n && protectedValue <= 150000n) {
-            return LegalOfficerCaseCost.euroToLgnt(Number(protectedValue) * 0.0018, lgntEuroRate);
+            euroValueFee = Number(protectedValue) * 0.0018;
         } else if(protectedValue > 150000n && protectedValue <= 300000n) {
-            return LegalOfficerCaseCost.euroToLgnt(Number(protectedValue) * 0.0016, lgntEuroRate);
+            euroValueFee = Number(protectedValue) * 0.0016;
         } else if(protectedValue > 300000n && protectedValue <= 600000n) {
-            return LegalOfficerCaseCost.euroToLgnt(Number(protectedValue) * 0.0014, lgntEuroRate);
+            euroValueFee = Number(protectedValue) * 0.0014;
         } else if(protectedValue > 600000n && protectedValue <= 1200000n) {
-            return LegalOfficerCaseCost.euroToLgnt(Number(protectedValue) * 0.0012, lgntEuroRate);
+            euroValueFee = Number(protectedValue) * 0.0012;
         } else if(protectedValue > 1200000n && protectedValue <= 2500000n) {
-            return LegalOfficerCaseCost.euroToLgnt(Number(protectedValue) * 0.0006, lgntEuroRate);
+            euroValueFee = Number(protectedValue) * 0.0006;
         } else {
-            return LegalOfficerCaseCost.euroToLgnt(Number(protectedValue) * 0.0003, lgntEuroRate);
+            euroValueFee = Number(protectedValue) * 0.0003;
         }
+        return Lgnt.fromFiat(Math.ceil(euroValueFee), lgntEuroRate);
     }
 
     private async itemsFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
-        let total = new Fees({ inclusionFee: 0n });
+        let total = Fees.zero();
         for(const item of this.parameters.items) {
             const submittable = api.polkadot.tx.logionLoc.addCollectionItem(
                 api.adapters.toLocId(new UUID()),
@@ -392,24 +344,22 @@ export class LegalOfficerCaseCost {
                 true,
                 [],
             );
-            const itemFees = LegalOfficerCaseCost.multiplyFees(
-                await api.fees.estimateAddCollectionItem({
-                    origin,
-                    collectionItemFee: this._collectionFees.collectionItemFee,
-                    numOfEntries: 1n,
-                    submittable,
-                    tokenIssuance: item.tokenSupply,
-                    totSize: item.totalFileSize,
-                }),
-                item.items
-            );
-            total = LegalOfficerCaseCost.addFees(total, itemFees);
+            const itemFee = await api.fees.estimateAddCollectionItem({
+                origin,
+                collectionItemFee: this._collectionFees.collectionItemFee,
+                numOfEntries: 1n,
+                submittable,
+                tokenIssuance: item.tokenSupply,
+                totSize: item.totalFileSize,
+            });
+            const itemFees = itemFee.multiply(item.items);
+            total = total.add(itemFees);
         }
         return total;
     }
 
     private async recordsFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
-        let total = new Fees({ inclusionFee: 0n });
+        let total = Fees.zero();
         for(const record of this.parameters.records) {
             const submittable = api.polkadot.tx.logionLoc.addTokensRecord(
                 api.adapters.toLocId(new UUID()),
@@ -424,27 +374,16 @@ export class LegalOfficerCaseCost {
                     })
                 ],
             );
-            const recordFees = LegalOfficerCaseCost.multiplyFees(
-                await api.fees.estimateAddTokensRecord({
-                    origin,
-                    tokensRecordFee: this._collectionFees.tokensRecordFee,
-                    numOfEntries: 1n,
-                    submittable,
-                    totSize: record.totalFileSize,
-                }),
-                record.records,
-            );
-            total = LegalOfficerCaseCost.addFees(total, recordFees);
+            const recordFee = await api.fees.estimateAddTokensRecord({
+                origin,
+                tokensRecordFee: this._collectionFees.tokensRecordFee,
+                numOfEntries: 1n,
+                submittable,
+                totSize: record.totalFileSize,
+            });
+            const recordFees = recordFee.multiply(record.records);
+            total = total.add(recordFees);
         }
         return total;
-    }
-
-    static euroToLgnt(amount: number, lgntEuroRate: number): bigint {
-        const converted = amount * lgntEuroRate;
-        return Currency.toCanonicalAmount(Currency.nLgnt(BigInt(Math.ceil(converted))));
-    }
-
-    static lgntToEuro(lgnt: bigint, lgntEuroRate: number): number {
-        return Currency.toPrefixedNumberAmount(lgnt).convertTo(Numbers.NONE).coefficient.toNumber() / lgntEuroRate;
     }
 }

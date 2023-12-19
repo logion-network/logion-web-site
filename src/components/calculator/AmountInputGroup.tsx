@@ -1,23 +1,22 @@
-import { Currency, Numbers } from "@logion/node-api";
+import { Lgnt } from "@logion/node-api";
 import { useCallback, useMemo } from "react";
 import { InputGroup } from "react-bootstrap";
 import DebounceFormControl from "./DebounceFormControl";
 
 export interface Props {
-    amount?: bigint;
+    amount?: Lgnt;
     readOnly?: boolean;
-    onChange?: (value: bigint) => void;
+    onChange?: (value: Lgnt) => void;
     disabled?: boolean;
 }
 
 export default function AmountInputGroup(props: Props) {
-    const prefixed = useMemo(() => Currency.toPrefixedNumberAmount(props.amount || 0n), [ props.amount ]);
-    const value = useMemo(() => prefixed.convertTo(Numbers.NONE).coefficient.unnormalize(), [ prefixed ]);
+    const value = useMemo(() => props.amount?.toPrefixedNumber().coefficient.unnormalize() || "0", [ props.amount ]);
 
     const onChange = useCallback((value: string) => {
         if(props.onChange) {
             const nLgnt = Number(value);
-            props.onChange(Currency.toCanonicalAmount(Currency_nLgnt(nLgnt)));
+            props.onChange(Lgnt.from(nLgnt));
         }
     }, [ props ]);
 
@@ -31,12 +30,7 @@ export default function AmountInputGroup(props: Props) {
                 type="number"
                 format
             />
-            <InputGroup.Text>{ Currency.SYMBOL }</InputGroup.Text>
+            <InputGroup.Text>{ Lgnt.CODE }</InputGroup.Text>
         </InputGroup>
     );
-}
-
-// TODO fix node-api
-export function Currency_nLgnt(lgntAmount: number): Numbers.PrefixedNumber {
-    return new Numbers.PrefixedNumber(lgntAmount.toString(), Numbers.NONE);
 }

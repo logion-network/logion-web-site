@@ -1,11 +1,11 @@
-import { Accordion, Form, InputGroup, Spinner } from "react-bootstrap";
+import { Accordion, Button, Form, InputGroup, Spinner } from "react-bootstrap";
 import { useCalculatorContext } from "./CalculatorContext";
 import LegalOfficerCaseView from "./LegalOfficerCaseView";
 import AddLocButtons from "./AddLocButtons";
 import NoLocsHelp from "./NoLocsHelp";
 import LocFees from "./LocFees";
 import Title2 from "./Title2";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import LayoutControl from "./LayoutControl";
 import { LegalOfficerCaseCost } from "./LegalOfficerCaseCost";
 import DebounceFormControl from "./DebounceFormControl";
@@ -17,12 +17,17 @@ function locTitle(index: number, loc: LegalOfficerCaseCost) {
 }
 
 export default function Calculator() {
-    const { locs, total, lgntEuroRate, setLgntEuroRate, updating, connection } = useCalculatorContext();
+    const { locs, total, lgntEuroRate, setLgntEuroRate, updating, connection, removeLocCost } = useCalculatorContext();
     const [ activeKey, setActiveKey ] = useState<string[]>([]);
 
     const allAccodionKeys = useMemo(() => {
         return locs.map((_, index) => index.toString());
     }, [ locs ]);
+
+    const onRemove = useCallback((index: number) => {
+        setActiveKey(activeKey.filter(key => key !== index.toString()));
+        removeLocCost(index);
+    }, [ activeKey, removeLocCost ]);
 
     if(!connection) {
         return (
@@ -73,7 +78,10 @@ export default function Calculator() {
             >
                 { locs.map((loc, index) => (
                     <Accordion.Item eventKey={ index.toString() } key={ index }>
-                        <Accordion.Header>{ locTitle(index, loc) }</Accordion.Header>
+                        <Accordion.Header>
+                            <span className="loc-description">{ locTitle(index, loc) }</span>
+                            <Button onClick={ () => onRemove(index) } variant="danger">Remove</Button>
+                        </Accordion.Header>
                         <Accordion.Body>
                             <LegalOfficerCaseView
                                 key={ index }
@@ -95,7 +103,7 @@ export default function Calculator() {
                 <Form.Label>Total fees (fiat)</Form.Label>
                 <InputGroup>
                     <Form.Control
-                        value={ LegalOfficerCaseCost.lgntToEuro(total.totalFee, lgntEuroRate) }
+                        value={ total.totalFee.convertToFiat(lgntEuroRate) }
                         readOnly={ true }
                         disabled={ true }
                         type="number"

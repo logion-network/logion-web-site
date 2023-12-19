@@ -115,7 +115,7 @@ function reducer(state: CalculatorContextState, action: Action): CalculatorConte
 }
 
 function costsState(locs: LegalOfficerCaseCost[]) {
-    const total = locs.map(cost => cost.fees).reduce((prev, cur) => LegalOfficerCaseCost.addFees(prev, cur), new Fees({ inclusionFee: 0n }));
+    const total = locs.map(cost => cost.fees).reduce((prev, cur) => prev.add(cur), Fees.zero());
     return {
         locs,
         total,
@@ -124,7 +124,7 @@ function costsState(locs: LegalOfficerCaseCost[]) {
 
 const INITIAL_STATE: CalculatorContextState = {
     locs: [],
-    total: new Fees({ inclusionFee: 0n }),
+    total: Fees.zero(),
     addLocCost: () => { throw new Error("Not implemented yet") },
     removeLocCost: () => { throw new Error("Not implemented yet") },
     updateLocCost: () => { throw new Error("Not implemented yet") },

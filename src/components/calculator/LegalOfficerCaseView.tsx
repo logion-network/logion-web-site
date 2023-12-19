@@ -1,13 +1,14 @@
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useCalculatorContext } from "./CalculatorContext";
 import AmountInputGroup from "./AmountInputGroup";
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import LocFees from "./LocFees";
 import CollectionFields from "./CollectionFields";
 import LocFiles from "./LocFiles";
 import DebounceFormControl from "./DebounceFormControl";
 import Title2 from "./Title2";
 import Title3 from "./Title3";
+import { Lgnt } from "@logion/node-api";
 
 export interface Props {
     index: number;
@@ -16,7 +17,7 @@ export interface Props {
 }
 
 export default function LegalOfficerCaseView(props: Props) {
-    const { locs, removeLocCost, updateLocCost, updating } = useCalculatorContext();
+    const { locs, updateLocCost, updating } = useCalculatorContext();
 
     const loc = useMemo(() => locs[props.index], [ locs, props.index ]);
 
@@ -24,14 +25,9 @@ export default function LegalOfficerCaseView(props: Props) {
         if(loc.parameters.locType === "Identity") {
             return undefined;
         } else {
-            return (value: bigint) => updateLocCost(props.index, "legalFee", value);
+            return (value: Lgnt) => updateLocCost(props.index, "legalFee", value);
         }
     }, [ loc.parameters.locType, updateLocCost, props.index ]);
-
-    const onRemove = useCallback(() => {
-        props.removeActiveKey();
-        removeLocCost(props.index);
-    }, [ props, removeLocCost ]);
 
     return (
         <div className="LegalOfficerCaseView">
@@ -88,7 +84,6 @@ export default function LegalOfficerCaseView(props: Props) {
                 fees={ loc.fees }
                 showCollectionFees={ loc.parameters.locType === "Collection" }
             />
-            <Button onClick={ onRemove } variant="danger">Remove LOC</Button>
         </div>
     );
 }
