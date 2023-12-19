@@ -1,0 +1,11 @@
+.CollectionItemView {
+    margin-bottom: 30px;
+}
+
+.CollectionItemView h4 {
+    color: var(--color1-color);
+}
+
+.CollectionItemView .btn {
+    margin-top: 10px;
+}

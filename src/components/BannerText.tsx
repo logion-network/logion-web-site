@@ -10,9 +10,9 @@ export interface Props {
 export default function BannerText(props: Props) {
     return (
         <div className="BannerText">
-            <p className="first">{ props.firstText }</p>
-            <p className="second">{ props.secondText }</p>
-            <p className="third">{ props.thirdText }</p>
+            <div className="first">{ props.firstText }</div>
+            <div className="second">{ props.secondText }</div>
+            <div className="third">{ props.thirdText }</div>
         </div>
     );
 }

@@ -14,7 +14,7 @@ export default function Team(props: Props) {
                 <h2>{ props.title }</h2>
                 <Row md={4} className="g-5">
                     {
-                        props.members.map(member => <Col>{ member }</Col>)
+                        props.members.map((member, index) => <Col key={ index }>{ member }</Col>)
                     }
                 </Row>
             </Container>

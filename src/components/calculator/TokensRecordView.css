@@ -1,0 +1,11 @@
+.TokensRecordView {
+    margin-bottom: 30px;
+}
+
+.TokensRecordView h4 {
+    color: var(--color1-color);
+}
+
+.TokensRecordView .btn {
+    margin-top: 10px;
+}

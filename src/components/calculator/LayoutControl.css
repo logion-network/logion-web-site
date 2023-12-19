@@ -1,0 +1,8 @@
+.LayoutControl {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.LayoutControl > *:nth-child(n+1) {
+    margin-left: 10px;
+}

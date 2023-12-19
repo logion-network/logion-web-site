@@ -1,0 +1,6 @@
+.CostCalculatorPage h1 {
+    text-align: center;
+    color: var(--color1-color);
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

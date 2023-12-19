@@ -1,0 +1,19 @@
+.Calculator .top-bar {
+    margin-top: 20px;
+}
+
+.Calculator .accordion-header .loc-description {
+    display: inline-block;
+    width: calc(100% - 150px);
+}
+
+@media print {
+    .Calculator .btn {
+        display: none;
+    }
+
+    .Calculator .accordion-button {
+        font-size: 1.7rem;
+        color: var(--color1-color);
+    }
+}

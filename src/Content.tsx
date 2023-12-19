@@ -41,12 +41,12 @@ export const CONTENT: ReactNode = (<>
     <Banner
         firstText={<>
             { /* START EDIT */ }
-           Empowering Tokens <br/>on Any Blockchain as <br/><em>Legal-Grade Digital Assets</em>
+           <p>Empowering Tokens <br/>on Any Blockchain as <br/><em>Legal-Grade Digital Assets</em></p>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-            Harness the full potential of tokenization with Logion, the groundbreaking blockchain infrastructure that protects the inherent token value.
+            <p>Harness the full potential of tokenization with Logion, the groundbreaking blockchain infrastructure that protects the inherent token value.</p>
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
@@ -71,17 +71,17 @@ export const CONTENT: ReactNode = (<>
         </>}
         firstText={<>
             { /* START EDIT */ }
-            The <em>Proof of Law</em>
+            <p>The <em>Proof of Law</em></p>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-            Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.<br/>Logion <em>verifies</em> and <em>binds</em> identities, companies, assets, rights, and obligations with any token on any chain.
+            <p>Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.<br/>Logion <em>verifies</em> and <em>binds</em> identities, companies, assets, rights, and obligations with any token on any chain.</p>
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
             { /* START EDIT */ }
-         Experience the power of tokens as tangible and trustworthy digital assets based on a <em>certified representation</em> of token value.
+            <p>Experience the power of tokens as tangible and trustworthy digital assets based on a <em>certified representation</em> of token value.</p>
             { /* STOP EDIT */ }
         </>}
     />
@@ -220,12 +220,12 @@ export const CONTENT: ReactNode = (<>
      <Banner
         firstText={<>
             { /* START EDIT */ }
-            The Logion Certificate:<br/> Proof of Law <em>materialization</em>
+            <p>The Logion Certificate:<br/> Proof of Law <em>materialization</em></p>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-            The online logion zero knowledge proof certificate with restricted delivery of digital assets and files.
+            <p>The online logion zero knowledge proof certificate with restricted delivery of digital assets and files.</p>
             { /* STOP EDIT */ }
         </>}
         thirdText={<>

@@ -1,0 +1,11 @@
+.LocFileView {
+    margin-bottom: 30px;
+}
+
+.LocFileView h4 {
+    color: var(--color1-color);
+}
+
+.LocFileView .btn {
+    margin-top: 10px;
+}
