@@ -2,7 +2,7 @@ import { createContext, Context, useContext, useReducer, ReactNode, useCallback,
 import { ConnectionParameters, DEFAULT_LGNT_EURO_RATE, LegalOfficerCaseCost, LegalOfficerCaseCostParameters } from './LegalOfficerCaseCost';
 import { Fees, buildApiClass } from '@logion/node-api';
 
-const ENDPOINTS = ["wss://dev-rpc01.logion.network"];
+const ENDPOINTS = ["wss://rpc01.logion.network", "wss://rpc02.logion.network"];
 const ORIGIN = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
 
 export interface CalculatorContextState {
