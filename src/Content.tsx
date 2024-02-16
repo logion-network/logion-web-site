@@ -41,12 +41,15 @@ export const CONTENT: ReactNode = (<>
     <Banner
         firstText={<>
             { /* START EDIT */ }
-           <p>Empowering Tokens <br/>on Any Blockchain as <br/><em>Legal-Grade Digital Assets</em></p>
+           <p>Bring trust into digital transactions<br/><em>Redefining trust by protecting digital processes</em></p>
             { /* STOP EDIT */ }
         </>}
         secondText={<>
             { /* START EDIT */ }
-            <p>Harness the full potential of tokenization with Logion, the groundbreaking blockchain infrastructure that protects the inherent token value.</p>
+            <p>Bringing trust into transactions.<br/>
+                Provide Zero-Knowledge Proof certificates.<br/>
+                Protect content, rights, identities.<br/>
+</p>
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
@@ -76,12 +79,13 @@ export const CONTENT: ReactNode = (<>
         </>}
         secondText={<>
             { /* START EDIT */ }
-            <p>Say goodbye to the disconnection between on-chain tokens and their associated rights and assets.<br/>Logion <em>verifies</em> and <em>binds</em> identities, companies, assets, rights, and obligations with any token on any chain.</p>
+            <p>Logion redefines the connection between digital actions and their legal implications by ensuring every blockchain-based transaction is backed by robust legal certification.</p>
+            <p>This approach not only verifies but also binds identities, companies, and the full spectrum of digital interactions with unmatched legal integrity, privacy and transparency, ensuring every digital exchange is tangible and trustworthy.</p>
             { /* STOP EDIT */ }
         </>}
         thirdText={<>
             { /* START EDIT */ }
-            <p>Experience the power of tokens as tangible and trustworthy digital assets based on a <em>certified representation</em> of token value.</p>
+            <p>Experience a new era of digital assets, where every transaction is protected, and every piece of data is secured under the vigilant eye of Logion's Proof of Law.</p>
             { /* STOP EDIT */ }
         </>}
     />
@@ -97,10 +101,10 @@ export const CONTENT: ReactNode = (<>
                 alt: "blockchain",
                 height: "129px",
             },
-            title: "A blockchain by judicial officers",
+            title: "A blockchain by legal officers",
             text: (<>
                 { /* START EDIT */ }
-                Logion is operated by a decentralized network of international & independent Judicial Officers,
+                Logion is operated by a decentralized network of international & independent Legal Officers,
                 the <strong>mandatory foundation</strong> to be the gateway between laws, Real World Asset and the digital economy.
                 { /* STOP EDIT */ }
             </>)
@@ -115,7 +119,7 @@ export const CONTENT: ReactNode = (<>
             text: (<>
                 { /* START EDIT */ }
                 Logion infrastructure includes a safe, legally protected, controlled, encrypted and decentralized document storage
-                system exclusively operated by Judicial Officers. This allows <strong>token-gated and traceable deliveries</strong> of digital assets,
+                system exclusively operated by Legal Officers. This allows <strong>token-gated and traceable deliveries</strong> of digital assets,
                 and documents.
                 { /* STOP EDIT */ }
             </>)
@@ -153,13 +157,17 @@ export const CONTENT: ReactNode = (<>
     <OneByTwoTextImage
         title={<>
             { /* START EDIT */ }
-            A <em>Decentralized</em> Network Fueling the Tokenization Revolution
+            A unique <em>decentralized</em> network combining technology, law and <em>human</em> empowerment
             { /* STOP EDIT */ }
         </>}
         paragraphs={<>
             { /* START EDIT */ }
-            <p>Logion's <em>global</em> Judicial Officers network starts with authenticating identities and confirms the legitimacy of corporations, establishing an <em>unbroken chain of custody</em> for evidence records, as mandated by legal and compliance principles. Verified Issuers, subject to rigorous due diligence by these officers, bear the <em>accountability</em> for the professional content they contribute.</p>
-            <p>This strong foundation enables Logion infrastructure to <em>automatically record and bind</em> vast amounts of token-related data, files and digital assets to <em>billions of tokens</em>. These records are shared by the <em>Logion certificate</em> - bound to each token - through a Zero Knowledge Proof system, preserving confidentiality and privacy while paving the way for the forthcoming wave of tokenization.</p>  { /* STOP EDIT */ }
+            <p>Logion is revolutionizing the digital space through a decentralized international network of Legal Officers.
+                This network begins with the authentication of identities and the validation of corporate legitimacy, ensuring a <em>legally sound chain of
+                custody for all digital records</em>. By applying meticulous due diligence, Legal Officers hold Verified Issuers accountable, enhancing
+                the <em>integrity of the digital ecosystem</em>.</p>
+            <p>Logion's advanced blockchain infrastructure not only secures digital exchanges but also protects associated data and assets, employing Zero Knowledge Proof technology to ensure <em>privacy and confidentiality</em>. This innovative approach fosters a <em>secure, private digital future</em>, ready for the expansive possibilities of digital transactions.</p>
+            { /* STOP EDIT */ }
         </>}
         images={<>
             <Image
@@ -171,9 +179,27 @@ export const CONTENT: ReactNode = (<>
         theme="bright"
     />
     <SimpleSection
+        title={<>
+            { /* START EDIT */ }
+            Covering <em>all sectors</em>: Economy, Finance, Regulation
+            { /* STOP EDIT */ }
+        </>}
         paragraphs={<>
             { /* START EDIT */ }
-            <p>In Logion's secure legal and economic framework, independent Judicial Officers manage blockchain nodes, verifying the <em>source and integrity</em> of content. Concurrently, Verified Issuers provide <em>substantial</em> information. This essential collaboration, backed by a highly scalable software platform, positions Logion to <em>massively streamline</em> its protective services, thereby guaranteeing safety and value for <em>billions of tokens</em>.
+            <p>The convergence of technologies (blockchain, artificial intelligence, internet of things, digital twins) is revolutionizing all value chains in all sectors towards the development of the Data Economy : supply chains (industry, art, health, etc), decentralized finance, digital money.</p>
+            <p>Logion innovates by offering, at the transaction level, ad hoc legal protection for the economic and legal framework of all private and public players operating in the new digital transactional environment.</p>
+            { /* STOP EDIT */ }
+        </>}
+    />
+    <SimpleSection
+        title={<>
+            { /* START EDIT */ }
+            Sound <em>balance</em> between Human and technology
+            { /* STOP EDIT */ }
+        </>}
+        paragraphs={<>
+            { /* START EDIT */ }
+            <p>In Logion's secure legal and economic framework, independent Legal Officers manage blockchain nodes, verifying the <em>source and integrity</em> of content. Concurrently, Verified Issuers provide <em>substantial</em> information. This essential collaboration, backed by a highly scalable software platform, positions Logion to <em>massively streamline</em> its protective services, thereby guaranteeing safety and value for <em>billions of transactions</em>.
             </p>
             { /* STOP EDIT */ }
         </>}
@@ -231,7 +257,7 @@ export const CONTENT: ReactNode = (<>
         thirdText={<>
             { /* START EDIT */ }
             <ul>
-                <li><em>Unified & persistent access to all token-related documentation</em>: all important document and data in one place, authenticated, segregated from the token issuer marketplace</li>
+                <li><em>Unified & persistent access to your documentation</em>: all important document and data in one place</li>
                 <li><em>Token-gated</em>: restricted delivery of assets and documents to token owner after authentication (eg: metamask, ledger)</li>
                 <li><em>Zero-knowledge</em>: on-chain proof of existence without revealing content</li>
                 <li><em>Clear</em> Intellectual Property rights (IP-related NFT context)</li>
@@ -347,10 +373,23 @@ export const CONTENT: ReactNode = (<>
                     { /* START EDIT */ }
                     Belgian Legal Officer,
                     Head of the Legal Officers nomination board,
-                    Secretary of the International Union of Judicial Officers
+                    Secretary of the International Union of Legal Officers
                     { /* STOP EDIT */ }
                 </>}
                 linkedIn="https://www.linkedin.com/in/patrick-gielen-4a4a6468/"
+            />,
+            <Member
+                image="media/shayldon.jpeg"
+                border={ true }
+                name="Shayldon Brown"
+                title={<>Growth<br/>Funding</> }
+                description={<>
+                    { /* START EDIT */ }
+                    Investment, crypto, regulatory 
+                    and entrepreneurial experience
+                    { /* STOP EDIT */ }
+                </>}
+                linkedIn="https://www.linkedin.com/in/shayldon-brown/"
             />,
         ]}
     />
@@ -535,7 +574,7 @@ export const CONTENT: ReactNode = (<>
     <Contact
         title={<>
             { /* START EDIT */ }
-            Want to join the <em>safe digital ownership movement</em> ?
+            Ready to elevate your digital transactions with <em>unparalleled security and trust</em>?
             { /* STOP EDIT */ }
         </>}
         content={<>
@@ -553,14 +592,14 @@ export const CONTENT: ReactNode = (<>
 // Footer
 export const FOOTER_SUMMARY: ReactNode = <>
     { /* START EDIT */ }
-    The blockchain Infrastructure<br/> of Safe digital Ownership
+    The blockchain Infrastructure<br/> of Secure digital transactions
     { /* STOP EDIT */ }
 </>;
 export const FOOTER_LEGAL: ReactNode = <>
     { /* START EDIT */ }
     <p>LOGION AISBL<br/>
     (International Non-Profit Association)</p>
-    <p>Rue Beckers 17, 1040 Etterbeek, Belgium</p>
+    <p>Rue d'Abhooz 31, 4040 Herstal, Belgium</p>
     <p>BCE: 0779.497.245</p>
     <p><a href={`mailto:${ CONTACT_EMAIL }`}>{ CONTACT_EMAIL }</a></p>
     { /* STOP EDIT */ }
