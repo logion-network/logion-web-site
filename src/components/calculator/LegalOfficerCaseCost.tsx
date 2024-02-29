@@ -268,10 +268,16 @@ export class LegalOfficerCaseCost {
         } else if(this.parameters.locType === "Collection") {
             return api.fees.estimateWithoutStorage({
                 origin,
-                submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
+                submittable: api.polkadot.tx.logionLoc.createCollectionLoc(
                     api.adapters.toLocId(new UUID()),
                     origin,
+                    null, // last_block_submission
+                    this.parameters.items.length, // max_size
+                    true, // can_upload
+                    this.collectionFees.valueFee.canonical,
                     this.parameters.legalFee.canonical,
+                    this.collectionFees.collectionItemFee.canonical,
+                    this.collectionFees.tokensRecordFee.canonical,
                     api.adapters.toPalletLogionLocItemsParams({
                         metadata: [],
                         files: [],
@@ -282,7 +288,7 @@ export class LegalOfficerCaseCost {
         } else if(this.parameters.locType === "Identity") {
             return api.fees.estimateWithoutStorage({
                 origin,
-                submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
+                submittable: api.polkadot.tx.logionLoc.createPolkadotIdentityLoc(
                     api.adapters.toLocId(new UUID()),
                     origin,
                     this.parameters.legalFee.canonical,
