@@ -35,8 +35,8 @@ export const ZERO_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
 export const DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
     custom: false,
     protectedValue: 2500000n,
-    protectedCollectionItemValue: 1250000n,
-    protectedTokensRecordValue: 1250000n,
+    protectedCollectionItemValue: 0n,
+    protectedTokensRecordValue: 0n,
     customValueFee: Lgnt.zero(),
     customCollectionItemFee: Lgnt.zero(),
     customTokensRecordFee: Lgnt.zero(),
