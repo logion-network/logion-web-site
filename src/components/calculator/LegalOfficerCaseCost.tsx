@@ -15,6 +15,8 @@ export interface LegalOfficerCaseCostParameters {
 export interface CollectionCostParameters {
     readonly custom: boolean;
     readonly protectedValue: bigint;
+    readonly protectedCollectionItemValue: bigint;
+    readonly protectedTokensRecordValue: bigint;
     readonly customValueFee: Lgnt;
     readonly customCollectionItemFee: Lgnt;
     readonly customTokensRecordFee: Lgnt;
@@ -23,6 +25,8 @@ export interface CollectionCostParameters {
 export const ZERO_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
     custom: false,
     protectedValue: 0n,
+    protectedCollectionItemValue: 0n,
+    protectedTokensRecordValue: 0n,
     customValueFee: Lgnt.zero(),
     customCollectionItemFee: Lgnt.zero(),
     customTokensRecordFee: Lgnt.zero(),
@@ -31,6 +35,8 @@ export const ZERO_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
 export const DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
     custom: false,
     protectedValue: 2500000n,
+    protectedCollectionItemValue: 0n,
+    protectedTokensRecordValue: 0n,
     customValueFee: Lgnt.zero(),
     customCollectionItemFee: Lgnt.zero(),
     customTokensRecordFee: Lgnt.zero(),
@@ -39,6 +45,8 @@ export const DEFAULT_STANDARD_COLLECTION_COST_PARAMETERS: CollectionCostParamete
 export const DEFAULT_CUSTOM_COLLECTION_COST_PARAMETERS: CollectionCostParameters = {
     custom: true,
     protectedValue: 0n,
+    protectedCollectionItemValue: 0n,
+    protectedTokensRecordValue: 0n,
     customValueFee: Lgnt.from(3000n),
     customCollectionItemFee: Lgnt.from(1500n),
     customTokensRecordFee: Lgnt.from(1500n),
@@ -260,10 +268,16 @@ export class LegalOfficerCaseCost {
         } else if(this.parameters.locType === "Collection") {
             return api.fees.estimateWithoutStorage({
                 origin,
-                submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
+                submittable: api.polkadot.tx.logionLoc.createCollectionLoc(
                     api.adapters.toLocId(new UUID()),
                     origin,
+                    null, // last_block_submission
+                    this.parameters.items.length, // max_size
+                    true, // can_upload
+                    this.collectionFees.valueFee.canonical,
                     this.parameters.legalFee.canonical,
+                    this.collectionFees.collectionItemFee.canonical,
+                    this.collectionFees.tokensRecordFee.canonical,
                     api.adapters.toPalletLogionLocItemsParams({
                         metadata: [],
                         files: [],
@@ -274,7 +288,7 @@ export class LegalOfficerCaseCost {
         } else if(this.parameters.locType === "Identity") {
             return api.fees.estimateWithoutStorage({
                 origin,
-                submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
+                submittable: api.polkadot.tx.logionLoc.createPolkadotIdentityLoc(
                     api.adapters.toLocId(new UUID()),
                     origin,
                     this.parameters.legalFee.canonical,
@@ -299,8 +313,8 @@ export class LegalOfficerCaseCost {
             };
         } else {
             const valueFee = this.valueFee(this.parameters.collectionCostParameters.protectedValue, lgntEuroRate);
-            const collectionItemFee = valueFee.divide(2n);
-            const tokensRecordFee = collectionItemFee;
+            const collectionItemFee = this.valueFee(this.parameters.collectionCostParameters.protectedCollectionItemValue, lgntEuroRate);
+            const tokensRecordFee = this.valueFee(this.parameters.collectionCostParameters.protectedTokensRecordValue, lgntEuroRate);
             return { valueFee, collectionItemFee, tokensRecordFee };
         }
     }
