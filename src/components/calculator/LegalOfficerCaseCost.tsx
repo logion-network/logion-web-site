@@ -1,4 +1,4 @@
-import { Fees, Hash, Lgnt, LocType, LogionNodeApiClass, UUID } from "@logion/node-api";
+import { Fees, Hash, Lgnt, LocType, LogionNodeApiClass, UUID, ValidAccountId } from "@logion/node-api";
 
 export interface LegalOfficerCaseCostParameters {
     readonly description: string;
@@ -96,7 +96,7 @@ export interface CollectionFees {
 
 export interface ConnectionParameters {
     api: LogionNodeApiClass;
-    origin: string;
+    origin: ValidAccountId;
 }
 
 export class LegalOfficerCaseCost {
@@ -183,7 +183,7 @@ export class LegalOfficerCaseCost {
                 api.adapters.toPalletLogionLocMetadataItem({
                     name: Hash.of("Some name"),
                     value: Hash.of("Some value"),
-                    submitter: api.queries.getValidAccountId(origin, "Polkadot"),
+                    submitter: origin,
                 })
             ),
         });
@@ -195,7 +195,7 @@ export class LegalOfficerCaseCost {
                 api.adapters.toPalletLogionLocLocLinkParams({
                     id: new UUID(),
                     nature: Hash.of("Some nature"),
-                    submitter: api.queries.getValidAccountId(origin, "Polkadot"),
+                    submitter: origin,
                 })
             ),
         });
@@ -229,7 +229,7 @@ export class LegalOfficerCaseCost {
         );
     }
 
-    private async filesFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
+    private async filesFees(api: LogionNodeApiClass, origin: ValidAccountId): Promise<Fees> {
         let total = Fees.zero();
         for(const file of this.parameters.files) {
             const fileFees = await api.fees.estimateWithStorage({
@@ -240,7 +240,7 @@ export class LegalOfficerCaseCost {
                         hash: Hash.of(""),
                         nature: Hash.of("Some nature"),
                         size: file.size,
-                        submitter: api.queries.getValidAccountId(origin, "Polkadot"),
+                        submitter: origin,
                     }),
                 ),
                 size: file.size,
@@ -250,13 +250,13 @@ export class LegalOfficerCaseCost {
         return total;
     }
 
-    private async creationFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
+    private async creationFees(api: LogionNodeApiClass, origin: ValidAccountId): Promise<Fees> {
         if(this.parameters.locType === "Transaction") {
             return api.fees.estimateWithoutStorage({
                 origin,
                 submittable: api.polkadot.tx.logionLoc.createPolkadotTransactionLoc(
                     api.adapters.toLocId(new UUID()),
-                    origin,
+                    origin.address,
                     this.parameters.legalFee.canonical,
                     api.adapters.toPalletLogionLocItemsParams({
                         metadata: [],
@@ -270,7 +270,7 @@ export class LegalOfficerCaseCost {
                 origin,
                 submittable: api.polkadot.tx.logionLoc.createCollectionLoc(
                     api.adapters.toLocId(new UUID()),
-                    origin,
+                    origin.address,
                     null, // last_block_submission
                     this.parameters.items.length, // max_size
                     true, // can_upload
@@ -290,7 +290,7 @@ export class LegalOfficerCaseCost {
                 origin,
                 submittable: api.polkadot.tx.logionLoc.createPolkadotIdentityLoc(
                     api.adapters.toLocId(new UUID()),
-                    origin,
+                    origin.address,
                     this.parameters.legalFee.canonical,
                     api.adapters.toPalletLogionLocItemsParams({
                         metadata: [],
@@ -339,7 +339,7 @@ export class LegalOfficerCaseCost {
         return Lgnt.fromFiat(Math.ceil(euroValueFee), lgntEuroRate);
     }
 
-    private async itemsFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
+    private async itemsFees(api: LogionNodeApiClass, origin: ValidAccountId): Promise<Fees> {
         let total = Fees.zero();
         for(const item of this.parameters.items) {
             const submittable = api.polkadot.tx.logionLoc.addCollectionItem(
@@ -372,7 +372,7 @@ export class LegalOfficerCaseCost {
         return total;
     }
 
-    private async recordsFees(api: LogionNodeApiClass, origin: string): Promise<Fees> {
+    private async recordsFees(api: LogionNodeApiClass, origin: ValidAccountId): Promise<Fees> {
         let total = Fees.zero();
         for(const record of this.parameters.records) {
             const submittable = api.polkadot.tx.logionLoc.addTokensRecord(

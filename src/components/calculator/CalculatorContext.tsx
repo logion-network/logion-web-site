@@ -1,9 +1,9 @@
 import { createContext, Context, useContext, useReducer, ReactNode, useCallback, useEffect } from 'react';
 import { ConnectionParameters, DEFAULT_LGNT_EURO_RATE, LegalOfficerCaseCost, LegalOfficerCaseCostParameters } from './LegalOfficerCaseCost';
-import { Fees, buildApiClass } from '@logion/node-api';
+import { Fees, LogionNodeApiClass, ValidAccountId } from '@logion/node-api';
 
-const ENDPOINTS = ["wss://rpc01.logion.network", "wss://rpc02.logion.network"];
-const ORIGIN = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
+const ENDPOINTS = ["wss://para-rpc01.logion.network", "wss://para-rpc02.logion.network"];
+const ORIGIN = ValidAccountId.polkadot("5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY");
 
 export interface CalculatorContextState {
     locs: LegalOfficerCaseCost[];
@@ -148,7 +148,7 @@ export default function CalculatorContextProvider(props: Props) {
         if(!connecting) {
             connecting = true;
             (async function() {
-                const api = await buildApiClass(ENDPOINTS);
+                const api = await LogionNodeApiClass.connect(ENDPOINTS);
                 const origin = ORIGIN;
                 dispatch({
                     type: "CONNECT",
