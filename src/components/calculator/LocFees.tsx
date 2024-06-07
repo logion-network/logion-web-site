@@ -16,7 +16,7 @@ export default function LocFees(props: Props) {
             { props.title }
 
             <Form.Group controlId="inclusion">
-                <Form.Label>Inclusion fee</Form.Label>
+                <Form.Label>Inclusion fee (can be impacted by network load)</Form.Label>
                 <AmountInputGroup
                     amount={ props.fees.inclusionFee }
                     disabled={ true }
