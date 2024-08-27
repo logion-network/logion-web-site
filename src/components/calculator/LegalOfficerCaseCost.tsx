@@ -387,6 +387,7 @@ export class LegalOfficerCaseCost {
                         size: record.totalFileSize,
                     })
                 ],
+                false,
             );
             const recordFee = await api.fees.estimateAddTokensRecord({
                 origin,
